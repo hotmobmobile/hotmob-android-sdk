@@ -69,7 +69,7 @@ HotmobManager.getPopup(this, listener, "launch_popup", "hotmob_uat_android_image
 ---
 | HotmobSDK Version     | Minimum Android Target         | Notes |
 | --------              |---------                       |-------|
-| 4.x                   | Android level 15               |   Updated to ARC structure   |
+| 4.x                   | Android level 15               |   New advertisement format   |
 | 3.x                   | Android level 9                |   Architecture optimization    |
 
 ### Basic Usage
