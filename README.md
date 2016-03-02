@@ -12,6 +12,7 @@ Visit http://www.hot-mob.com/ for more details.
 * Read the [Hotmob SDK 4.0 Migration Guide](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/HotmobSDK-4.0-Migration-Guide) for an overview of the architectural changes from 3.0 or below
 
 ### Integration 
+---
 
 #### Android Studio
 1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
@@ -57,7 +58,7 @@ And add the following lines inside the <application> tag of the manifest:
 
 2.) Follow the implementation guideline to import the Hotmob SDK into your project. [Implementation guide for Eclipse](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Implementation-guide-for-Eclipse)
 
-#### Running
+#### Implement
 
 1.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
 
