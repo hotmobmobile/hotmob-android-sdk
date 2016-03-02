@@ -12,13 +12,13 @@ Visit http://www.hot-mob.com/ for more details.
 * Read the [Hotmob SDK 4.0 Migration Guide](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/HotmobSDK-4.0-Migration-Guide) for an overview of the architectural changes from 3.0 or below
 
 ### Integration 
+
+#### Android Studio
 1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
 
-2.) Drag the HotmobSDK folder into your project. (For Android Studio Project)
+2.) Import the Hotmob SDK into your Android Studio Project as a module.[Android Studio | How To Add A Library Project?](http://www.truiton.com/2015/02/android-studio-add-library-project/)
 
-3.) Import HotmobSDK into Android Studio Project as a module.[You can find the Detail from Android Developer](http://developer.android.com/sdk/installing/create-project.html#ReferencingLibraryModule)
-
-4.) Add the permission and Hotmob Activity Information to Project Manifest file.
+3.) Add the permission and Hotmob Activity Information to Project Manifest file.
 
 > Add the following lines inside the <manifest> tag of the manifest:
 ``` xml
@@ -51,9 +51,9 @@ And add the following lines inside the <application> tag of the manifest:
      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 ```
 
-5.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
+4.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
 
-6.) Start the HotmobSDK in first activity in your project.
+5.) Start the HotmobSDK in first activity in your project.
 
 ``` java
 HotmobManager.start(this);
@@ -64,6 +64,12 @@ HotmobManager.setDebug(true);
 // Add to `onCreate` at Launcher activity in your project
 HotmobManager.getPopup(this, listener, "launch_popup", "hotmob_uat_android_image_inapp_popup", true, false);
 ```
+
+#### Eclipse
+
+1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
+
+2.) Follow the implementation guideline to import the Hotmob SDK into your project. [Implementation guide for Eclipse](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Implementation-guide-for-Eclipse)
 
 ### Requirements
 ---
