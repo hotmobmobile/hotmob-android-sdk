@@ -134,7 +134,7 @@ HotmobManagerListener listener = new HotmobManagerListener() {
 3.)  Request the HotmobBanner 
 
 ```java
-View bottomBannerView = HotmobManager.getBanner(getActivity(), listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
+View bottomBannerView = HotmobManager.getBanner(this, listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
 ```
 You can set any String value into identifier.
 For adCode, please contact Hotmob to obtain suitable ad code.
