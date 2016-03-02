@@ -51,9 +51,17 @@ And add the following lines inside the <application> tag of the manifest:
      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 ```
 
-4.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
+#### Eclipse
 
-5.) Start the HotmobSDK in first activity in your project.
+1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
+
+2.) Follow the implementation guideline to import the Hotmob SDK into your project. [Implementation guide for Eclipse](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Implementation-guide-for-Eclipse)
+
+#### Running
+
+1.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
+
+2.) Start the HotmobSDK in first activity in your project.
 
 ``` java
 HotmobManager.start(this);
@@ -64,12 +72,6 @@ HotmobManager.setDebug(true);
 // Add to `onCreate` at Launcher activity in your project
 HotmobManager.getPopup(this, listener, "launch_popup", "hotmob_uat_android_image_inapp_popup", true, false);
 ```
-
-#### Eclipse
-
-1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
-
-2.) Follow the implementation guideline to import the Hotmob SDK into your project. [Implementation guide for Eclipse](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Implementation-guide-for-Eclipse)
 
 ### Requirements
 ---
