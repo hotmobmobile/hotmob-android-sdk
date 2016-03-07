@@ -58,6 +58,13 @@ And add the following lines inside the <application> tag of the manifest:
 
 2.) Follow the implementation guideline to import the Hotmob SDK into your project. [Implementation guide for Eclipse](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Implementation-guide-for-Eclipse)
 
+### Requirements
+---
+| HotmobSDK Version     | Minimum Android Target         | Notes |
+| --------              |---------                       |-------|
+| 4.x                   | Android level 15               |   New advertisement format   |
+| 3.x                   | Android level 9                |   Architecture optimization    |
+
 #### Implement
 
 1.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
@@ -73,13 +80,6 @@ HotmobManager.setDebug(true);
 // Add to `onCreate` at Launcher activity in your project
 HotmobManager.getPopup(this, listener, "launch_popup", "hotmob_uat_android_image_inapp_popup", true, false);
 ```
-
-### Requirements
----
-| HotmobSDK Version     | Minimum Android Target         | Notes |
-| --------              |---------                       |-------|
-| 4.x                   | Android level 15               |   New advertisement format   |
-| 3.x                   | Android level 9                |   Architecture optimization    |
 
 ### Basic Usage
 ---
