@@ -163,6 +163,33 @@ public void onResizeBanner(View bannerView) {
 }
 ```
 ---
+
+####  Banner in ListView
+To create the Hotmob Banner in ListView, please refer to the steps in "Bottom Banner", and add the following additional steps:
+
+1.) Set OnScrollListener for the ListView, override `onScroll()` method.
+```java
+listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        updateBannerPosition();
+    }
+});
+```
+
+2.) Also create a new method to notify HotmobManager for updating banner position:
+```java
+private void updateBannerPosition(){
+    HotmobManager.updateBannerPosition(this.getActivity());
+}
+```
+
+---
 Other usage can refercence to wiki [Integrating Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Banner), [Integrating Popup](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Popup).
 ### Contact
 ---
