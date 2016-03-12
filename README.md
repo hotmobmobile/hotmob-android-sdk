@@ -139,11 +139,19 @@ View bottomBannerView = HotmobManager.getBanner(this, listener, HotmobManager.ge
 You can set any String value into identifier.
 For adCode, please contact Hotmob to obtain suitable ad code.
 
-4.) Callback method didLoadBanner: will execute when the HotmobBanner ready. Add the banner into the current view as a subview.
+4.) Integrate callback method `didLoadBanner()`: This method will be called when the HotmobBanner ready. Add the banner into the current view as a subview.
 ```java
 @Override
 public void didLoadBanner(View bannerView) {
      mBannerLayout.addView(bannerView);
+}
+```
+
+5.) Integrate callback method `didHideBanner()`: This method will be called when the HotmobBanner was closed. You should modify your app layout to no HotmobBaner situation.
+```java
+@Override
+public void didHideBanner(View bannerView) {
+    // Add your implementation here.
 }
 ```
 
