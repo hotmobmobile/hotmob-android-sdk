@@ -155,6 +155,13 @@ public void didHideBanner(View bannerView) {
 }
 ```
 
+6.) Integrate callback method `onResizeBanner()`: This method will be called when the size of HotmobBanner was changed. You should modify your app layout to fulfil the new banner size.
+```java
+@Override
+public void onResizeBanner(View bannerView) {
+    // Add your implementation here.
+}
+```
 ---
 Other usage can refercence to wiki [Integrating Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Banner), [Integrating Popup](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Popup).
 ### Contact
