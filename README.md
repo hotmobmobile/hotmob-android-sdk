@@ -165,7 +165,7 @@ public void onResizeBanner(View bannerView) {
 ---
 
 ####  Banner in ListView
-To create the Hotmob Banner in ListView, please refer to the steps in "Bottom Banner", and add the following additional steps:
+To create the Hotmob Banner in ListView, please refer to the steps in "[Bottom Banner](#bottom-banner)", and add the following additional steps:
 
 1.) Set OnScrollListener for the ListView, override `onScroll()` method.
 ```java
