@@ -17,7 +17,7 @@ Visit http://www.hot-mob.com/ for more details.
 #### Android Studio
 1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
 
-2.) Import the Hotmob SDK into your Android Studio Project as a module.[Android Studio | How To Add A Library Project?](http://www.truiton.com/2015/02/android-studio-add-library-project/)
+2.) Import the Hotmob SDK into your Android Studio Project as a module. [Android Studio | How To Add A Library Project?](http://www.truiton.com/2015/02/android-studio-add-library-project/)
 
 3.) Add the permission and Hotmob Activity Information to Project Manifest file.
 
@@ -116,7 +116,7 @@ For adCode, please contact Hotmob to obtain suitable ad code.
 
   ---
 
-####  Footer Banner
+####  Bottom Banner
 To create the Hotmob Banner can refercence following step.
 
 1.) Make sure HotmobManager service is started.
