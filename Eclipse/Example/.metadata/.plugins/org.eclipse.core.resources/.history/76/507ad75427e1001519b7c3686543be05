@@ -1,0 +1,7 @@
+package com.hotmob.android.sdk.demo;
+
+import android.app.Fragment;
+
+public class HotmobDemoMediationBannerActivityFragment extends Fragment{
+
+}

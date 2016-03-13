@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listview_cell_item_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/listview_cell_text_size"
+        android:layout_marginTop="@dimen/listview_cell_marginTop"
+        android:layout_marginBottom="@dimen/listview_cell_marginBottom"
+        android:layout_marginStart="@dimen/listview_cell_marginLeft"
+        android:layout_marginEnd="@dimen/listview_cell_marginRight"
+        android:layout_marginLeft="@dimen/listview_cell_marginLeft"
+        android:layout_marginRight="@dimen/listview_cell_marginRight"
+        android:text="@string/app_name"/>
+
+</LinearLayout>
