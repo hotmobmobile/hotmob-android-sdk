@@ -75,6 +75,9 @@ And add the following lines inside the <application> tag of the manifest:
 HotmobManager.start(this);
 HotmobManager.setDebug(true);
 ```
+
+3.) Apply Activity Handling and Fragment Handling (if the app is a fragment-based application) into all Activities and Fragments. Please refer to [Getting Started](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Getting-Started#integrate-hotmob-android-sdk-in-activity-based-application) for details.
+
 > You can try to implement following code to confirm `HotmobSDK`  is functional in your project.
 ``` java
 // Add to `onCreate` at Launcher activity in your project
@@ -120,6 +123,14 @@ For adCode, please contact Hotmob to obtain suitable ad code.
 To create the Hotmob Banner can refercence following step.
 
 1.) Make sure HotmobManager service is started.
+```java
+
+//Start HotmobSDK service
+HotmobManager.start(this);
+
+//To enable debug mode on HotmobSDK
+HotmobManager.setDebug(true);
+```
 
 2.) Create the HotmobManagerListener for the callback method.
 ```java
@@ -134,10 +145,11 @@ HotmobManagerListener listener = new HotmobManagerListener() {
 3.)  Request the HotmobBanner 
 
 ```java
-View bottomBannerView = HotmobManager.getBanner(this, listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
+View bottomBannerView = HotmobManager.getBanner(object, listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
 ```
-You can set any String value into identifier.
-For adCode, please contact Hotmob to obtain suitable ad code.
+You can set either an Activity or a Fragment object into ```object```.  
+You can set any String value into ```identifier```.  
+For ```adCode```, please contact Hotmob to obtain suitable ad code.
 
 4.) Integrate callback method `didLoadBanner()`: This method will be called when the HotmobBanner ready. Add the banner into the current view as a subview.
 ```java
@@ -190,7 +202,7 @@ private void updateBannerPosition(){
 ```
 
 ---
-Other usage can refercence to wiki [Integrating Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Banner), [Integrating Popup](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Popup).
+Other usage can refercence to wiki [Integrating Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Banner), [Integrating Popup](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Popup), [Integrating Third Party Ad Network](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Third-Party-Ad-Network-for-Android).
 ### Contact
 ---
 Website: [http://www.hot-mob.com](http://www.hot-mob.com/)
