@@ -86,7 +86,7 @@ public class HotmobDemoVideoBannerActivityFragment extends Fragment{
     }
     
     private void createBannerCell() {
-        final String adCode = "hotmob_uat_android_image_inapp_banner";
+        final String adCode = "hotmob_android_example_videoads_banner";
 
         LayoutInflater bannerInflater = (LayoutInflater) this.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View bannerView = bannerInflater.inflate(R.layout.listview_banner_cell_item, null);
@@ -105,6 +105,29 @@ public class HotmobDemoVideoBannerActivityFragment extends Fragment{
 
             public void onResizeBanner(View bannerView) {
                 super.onResizeBanner(bannerView);
+            }
+            
+            // Please note:
+            // isSoundEnable == true --> Unmute
+            // isSoundEnable == false --> Mute
+            public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
+//                if (isSoundEnable) {
+//                    // Unmute
+//                    AudioStreamingController.getInstance().unmute();
+//                } else {
+//                    // Mute
+//                    AudioStreamingController.getInstance().mute();
+//                }
+            }
+            
+            public void hotmobBannerIsChangeToFullscreenMode(boolean isChangeToFullscreenMode) {
+            	if (isChangeToFullscreenMode) {
+            		// Mute the streaming audio when isChangeToFullscreenMode is true.
+            		AudioStreamingController.getInstance(HotmobDemoVideoBannerActivityFragment.this.getActivity()).mute();
+            	} else {
+            		// Unmute the streaming audio when isChangeToFullscreenMode is false.
+            		AudioStreamingController.getInstance(HotmobDemoVideoBannerActivityFragment.this.getActivity()).unmute();
+            	}
             }
         };
 

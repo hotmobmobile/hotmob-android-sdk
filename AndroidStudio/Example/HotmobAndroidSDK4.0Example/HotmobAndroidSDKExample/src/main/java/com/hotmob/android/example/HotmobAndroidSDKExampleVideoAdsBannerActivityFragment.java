@@ -131,9 +131,11 @@ public class HotmobAndroidSDKExampleVideoAdsBannerActivityFragment extends Fragm
             // isSoundEnable == false --> Mute
             public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
                 if (isSoundEnable) {
-                    Toast.makeText(HotmobAndroidSDKExampleVideoAdsBannerActivityFragment.this.getActivity(), "Banner Direct: Unmute!", Toast.LENGTH_SHORT).show();
+                    // Unmute
+                    AudioStreamingController.getInstance().unmute();
                 } else {
-                    Toast.makeText(HotmobAndroidSDKExampleVideoAdsBannerActivityFragment.this.getActivity(), "Banner Direct: Mute!", Toast.LENGTH_SHORT).show();
+                    // Mute
+                    AudioStreamingController.getInstance().mute();
                 }
             }
 

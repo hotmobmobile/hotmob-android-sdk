@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.app.Fragment;
+import android.net.rtp.AudioStream;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -199,9 +200,11 @@ public class HotmobAndroidSDKExampleMediationVideoAdsBannerActivityFragment exte
                 public void onReceive(Context context, Intent intent) {
                     String actionName = intent.getAction();
                     if (actionName.equals(HotmobManager.HotmobVideoPlayerMuteNotification)) {
-                        Toast.makeText(context, "Banner Mediation: Mute!", Toast.LENGTH_SHORT).show();
+                        // Mute
+                        AudioStreamingController.getInstance().mute();
                     } else if (actionName.equals(HotmobManager.HotmobVideoPlayerUnmuteNotification)) {
-                        Toast.makeText(context, "Banner Mediation: Unmute!", Toast.LENGTH_SHORT).show();
+                        // Unmute
+                        AudioStreamingController.getInstance().unmute();
                     }
                 }
             };

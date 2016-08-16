@@ -93,9 +93,11 @@ public class HotmobAndroidSDKExampleMediationPopupActivityFragment extends Fragm
                 public void onReceive(Context context, Intent intent) {
                     String actionName = intent.getAction();
                     if (actionName.equals(HotmobManager.HotmobVideoPlayerMuteNotification)) {
-                        Toast.makeText(context, "Popup Mediation: Mute!", Toast.LENGTH_SHORT).show();
+                        // Mute
+                        AudioStreamingController.getInstance().mute();
                     } else if (actionName.equals(HotmobManager.HotmobVideoPlayerUnmuteNotification)) {
-                        Toast.makeText(context, "Popup Mediation: Unmute!", Toast.LENGTH_SHORT).show();
+                        // Unmute
+                        AudioStreamingController.getInstance().unmute();
                     }
                 }
             };

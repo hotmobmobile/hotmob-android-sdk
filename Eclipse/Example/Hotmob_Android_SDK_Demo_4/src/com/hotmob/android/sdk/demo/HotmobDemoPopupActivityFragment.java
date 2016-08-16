@@ -73,9 +73,9 @@ public class HotmobDemoPopupActivityFragment extends Fragment{
 				// TODO Auto-generated method stub
 				String adcode;
 				if (position == 1) {
-					adcode = "hotmob_uat_android_video_inapp_popup";
+					adcode = "hotmob_android_example_videoads_popup";
 				}else{
-					adcode = "hotmob_uat_android_image_inapp_popup";
+					adcode = "hotmob_android_example_normal_popup";
 				}
 				
 				HotmobManagerListener listener = new HotmobManagerListener() {
@@ -111,13 +111,27 @@ public class HotmobDemoPopupActivityFragment extends Fragment{
                         super.openNoAdCallback(bannerView);
                     }
 
-                    public void openInternalCallback(View bannerView, String url) {
-                        super.openInternalCallback(bannerView, url);
-
-                    }
-
+                    // Please note:
+                    // isSoundEnable == true --> Unmute
+                    // isSoundEnable == false --> Mute
                     public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
-                        
+//                        if (isSoundEnable) {
+//                            // Unmute
+//                            AudioStreamingController.getInstance().unmute();
+//                        } else {
+//                            // Mute
+//                            AudioStreamingController.getInstance().mute();
+//                        }
+                    }
+                    
+                    public void hotmobBannerIsChangeToFullscreenMode(boolean isChangeToFullscreenMode) {
+                    	if (isChangeToFullscreenMode) {
+                    		// Mute the streaming audio when isChangeToFullscreenMode is true.
+                    		AudioStreamingController.getInstance(HotmobDemoPopupActivityFragment.this.getActivity()).mute();
+                    	} else {
+                    		// Unmute the streaming audio when isChangeToFullscreenMode is false.
+                    		AudioStreamingController.getInstance(HotmobDemoPopupActivityFragment.this.getActivity()).unmute();
+                    	}
                     }
                 };
                 

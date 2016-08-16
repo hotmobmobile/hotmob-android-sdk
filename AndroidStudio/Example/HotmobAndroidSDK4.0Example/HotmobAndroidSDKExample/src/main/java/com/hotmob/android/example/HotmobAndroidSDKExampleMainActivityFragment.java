@@ -80,6 +80,19 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                 Log.i(TAG, "onResizeBanner");
                 super.onResizeBanner(bannerView);
             }
+
+            // Please note:
+            // isSoundEnable == true --> Unmute
+            // isSoundEnable == false --> Mute
+            public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
+                if (isSoundEnable) {
+                    // Unmute
+                    AudioStreamingController.getInstance().unmute();
+                } else {
+                    // Mute
+                    AudioStreamingController.getInstance().mute();
+                }
+            }
         };
 
         HotmobManager.getBanner(getActivity(), listener, HotmobManager.getScreenWidth(getActivity()), "main_banner", adCode);
@@ -99,6 +112,8 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                 "Video Ads Banner (Mediation)",
                 "Multiple Banners (Mediation)",
                 "Banner in fragment",
+                "Play Audio Streaming",
+                "Stop Audio Streaming",
         };
 
         if (mList == null) {
@@ -153,6 +168,13 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                     case 8:
                         Intent iIntent = new Intent(activity, HotmobDemoMultipleFragmentActivity.class);
                         startActivity(iIntent);
+                        break;
+                    case 9:
+                        AudioStreamingController.getInstance().start("http://www.abstractpath.com/files/audiosamples/sample.mp3");
+                        break;
+                    case 10:
+                        AudioStreamingController.getInstance().stop();
+                        break;
                     default:
                         break;
                 }

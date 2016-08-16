@@ -131,6 +131,19 @@ public class HotmobAndroidSDKExampleMultipleBannersActivityFragment extends Frag
                 Log.i(TAG, "onResizeBanner");
                 super.onResizeBanner(bannerView);
             }
+
+            // Please note:
+            // isSoundEnable == true --> Unmute
+            // isSoundEnable == false --> Mute
+            public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
+                if (isSoundEnable) {
+                    // Unmute
+                    AudioStreamingController.getInstance().unmute();
+                } else {
+                    // Mute
+                    AudioStreamingController.getInstance().mute();
+                }
+            }
         };
 
         View hotmobBannerView = HotmobManager.getBanner(getActivity(), listener, HotmobManager.getScreenWidth(getActivity()), ("banner_position_" + position), adCode);
