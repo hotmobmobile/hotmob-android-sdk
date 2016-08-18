@@ -87,11 +87,12 @@
         android:paddingBottom="20dp"
         android:paddingLeft="20dp"
         android:paddingStart="20dp"
-        android:paddingRight="0dp"
-        android:paddingEnd="0dp"
+        android:paddingRight="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
         android:background="@android:color/transparent"
-        android:visibility="gone"
         android:src="@drawable/hotmob_video_close"
+        android:visibility="gone"
         android:contentDescription="@string/video_activity_close_fullscreen_button_desc" />
 
 </RelativeLayout>

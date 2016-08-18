@@ -16,7 +16,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hotmob.android.example.banner.HotmobAndroidSDKExampleBannerActivity;
+import com.hotmob.android.example.banner.HotmobAndroidSDKExampleMultipleBannersActivity;
+import com.hotmob.android.example.banner.HotmobAndroidSDKExampleVideoAdsBannerActivity;
 import com.hotmob.android.example.fragments.HotmobDemoMultipleFragmentActivity;
+import com.hotmob.android.example.banner.mediation.HotmobAndroidSDKExampleMediationBannerActivity;
+import com.hotmob.android.example.banner.mediation.HotmobAndroidSDKExampleMediationMultipleBannersActivity;
+import com.hotmob.android.example.popup.HotmobAndroidSDKExamplePopupActivity;
+import com.hotmob.android.example.popup.mediation.HotmobAndroidSDKExampleMediationPopupActivity;
+import com.hotmob.android.example.banner.mediation.HotmobAndroidSDKExampleMediationVideoAdsBannerActivity;
 import com.hotmob.sdk.handler.HotmobHandler;
 import com.hotmob.sdk.manager.HotmobManager;
 import com.hotmob.sdk.manager.HotmobManagerListener;
@@ -80,6 +88,19 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                 Log.i(TAG, "onResizeBanner");
                 super.onResizeBanner(bannerView);
             }
+
+            // Please note:
+            // isSoundEnable == true --> Unmute
+            // isSoundEnable == false --> Mute
+            public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
+                if (isSoundEnable) {
+                    // Unmute
+                    AudioStreamingController.getInstance().unmute();
+                } else {
+                    // Mute
+                    AudioStreamingController.getInstance().mute();
+                }
+            }
         };
 
         HotmobManager.getBanner(getActivity(), listener, HotmobManager.getScreenWidth(getActivity()), "main_banner", adCode);
@@ -99,6 +120,8 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                 "Video Ads Banner (Mediation)",
                 "Multiple Banners (Mediation)",
                 "Banner in fragment",
+                "Play Audio Streaming",
+                "Stop Audio Streaming",
         };
 
         if (mList == null) {
@@ -153,6 +176,13 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                     case 8:
                         Intent iIntent = new Intent(activity, HotmobDemoMultipleFragmentActivity.class);
                         startActivity(iIntent);
+                        break;
+                    case 9:
+                        AudioStreamingController.getInstance().start("http://www.abstractpath.com/files/audiosamples/sample.mp3");
+                        break;
+                    case 10:
+                        AudioStreamingController.getInstance().stop();
+                        break;
                     default:
                         break;
                 }
