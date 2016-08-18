@@ -57,42 +57,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HotmobAndroidSDKExampleBannerActivity"
+            android:name=".banner.HotmobAndroidSDKExampleBannerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_banner" />
         <activity
-            android:name=".HotmobAndroidSDKExamplePopupActivity"
+            android:name=".popup.HotmobAndroidSDKExamplePopupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_popup" />
         <activity
-            android:name=".HotmobAndroidSDKExampleVideoAdsBannerActivity"
+            android:name=".banner.HotmobAndroidSDKExampleVideoAdsBannerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_video_ads_banner" />
         <activity
-            android:name=".HotmobAndroidSDKExampleMultipleBannersActivity"
+            android:name=".banner.HotmobAndroidSDKExampleMultipleBannersActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_multiple_banners" />
         <activity
-            android:name=".HotmobAndroidSDKExampleMediationBannerActivity"
+            android:name=".banner.mediation.HotmobAndroidSDKExampleMediationBannerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_mediation_banner" />
         <activity
-            android:name=".HotmobAndroidSDKExampleMediationPopupActivity"
+            android:name=".popup.mediation.HotmobAndroidSDKExampleMediationPopupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_mediation_popup" />
         <activity
-            android:name=".HotmobAndroidSDKExampleMediationVideoAdsBannerActivity"
+            android:name=".banner.mediation.HotmobAndroidSDKExampleMediationVideoAdsBannerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_mediation_video_ads_banner" />
         <activity
-            android:name=".HotmobAndroidSDKExampleMediationMultipleBannersActivity"
+            android:name=".banner.mediation.HotmobAndroidSDKExampleMediationMultipleBannersActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_hotmob_android_sdkexample_mediation_multiple_banners" />

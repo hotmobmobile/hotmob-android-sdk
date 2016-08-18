@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Hotmob Android SDK 4.0 Example</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_hotmob_android_sdkexample_banner">Banners</string>
+    <string name="title_activity_hotmob_android_sdkexample_popup">Popup</string>
+    <string name="title_button_normal_popup">Normal Popup</string>
+    <string name="title_button_videoads_popup">Video Ads Popup</string>
+    <string name="title_activity_hotmob_android_sdkexample_video_ads_banner">
+        HotmobAndroidSDKExampleVideoAdsBannerActivity
+    </string>
+    <string name="title_activity_hotmob_android_sdkexample_multiple_banners">
+        HotmobAndroidSDKExampleMultipleBannersActivity
+    </string>
+    <string name="title_activity_hotmob_android_sdkexample_mediation_banner">
+        HotmobAndroidSDKExampleMediationBannerActivity
+    </string>
+    <string name="title_activity_hotmob_android_sdkexample_mediation_popup">
+        HotmobAndroidSDKExampleMediationPopupActivity
+    </string>
+    <string name="title_activity_hotmob_android_sdkexample_mediation_video_ads_banner">
+        HotmobAndroidSDKExampleMediationVideoAdsBannerActivity
+    </string>
+    <string name="title_activity_hotmob_android_sdkexample_mediation_multiple_banners">
+        HotmobAndroidSDKExampleMediationMultipleBannersActivity
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragment_2_textview">Hello! This is fragment 2!</string>
+    <string name="fragment_1_textview">HelloWorld! This is fragment 1</string>
+    <string name="title_activity_hotmob_demo_multiple_fragment">HotmobDemoMultipleFragmentActivity</string>
+
+
+</resources>

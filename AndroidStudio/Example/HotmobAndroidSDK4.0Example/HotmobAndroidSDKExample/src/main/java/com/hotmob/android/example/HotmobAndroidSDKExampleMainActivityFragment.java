@@ -16,7 +16,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hotmob.android.example.banner.HotmobAndroidSDKExampleBannerActivity;
+import com.hotmob.android.example.banner.HotmobAndroidSDKExampleMultipleBannersActivity;
+import com.hotmob.android.example.banner.HotmobAndroidSDKExampleVideoAdsBannerActivity;
 import com.hotmob.android.example.fragments.HotmobDemoMultipleFragmentActivity;
+import com.hotmob.android.example.banner.mediation.HotmobAndroidSDKExampleMediationBannerActivity;
+import com.hotmob.android.example.banner.mediation.HotmobAndroidSDKExampleMediationMultipleBannersActivity;
+import com.hotmob.android.example.popup.HotmobAndroidSDKExamplePopupActivity;
+import com.hotmob.android.example.popup.mediation.HotmobAndroidSDKExampleMediationPopupActivity;
+import com.hotmob.android.example.banner.mediation.HotmobAndroidSDKExampleMediationVideoAdsBannerActivity;
 import com.hotmob.sdk.handler.HotmobHandler;
 import com.hotmob.sdk.manager.HotmobManager;
 import com.hotmob.sdk.manager.HotmobManagerListener;
