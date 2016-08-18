@@ -153,6 +153,7 @@ i. If you placed the banner into an Activity, please set the Activity object int
 ii. You can set any String value into ```identifier```.  
 &nbsp;&nbsp;&nbsp;&nbsp;The value of ```identifier``` should be different for each banner.  
 iii. For ```adCode```, please contact Hotmob to obtain suitable ad code.  
+iv. For ```width```, it is recommended to use ```HotmobManager.getScreenWidth(getActivity())``` or ```HotmobManager.getScreenWidth(fragment.getActivity())``` if the banner width is equal to screen width. Otherwise, you should input a value in pixel.
 
 4.) Integrate callback method `didLoadBanner()`: This method will be called when the HotmobBanner ready. Add the banner into the current view as a subview.
 ```java
