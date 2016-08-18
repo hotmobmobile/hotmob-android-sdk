@@ -105,7 +105,6 @@ HotmobManager.setDebug(true);
 HotmobManagerListener listener = new HotmobManagerListener() {
      @Override
      public void didLoadBanner(View bannerView) {
-         mBannerLayout.addView(bannerView);
      }
 };
 ```
@@ -147,9 +146,13 @@ HotmobManagerListener listener = new HotmobManagerListener() {
 ```java
 View bottomBannerView = HotmobManager.getBanner(object, listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
 ```
-You can set either an Activity or a Fragment object into ```object```.  
-You can set any String value into ```identifier```.  
-For ```adCode```, please contact Hotmob to obtain suitable ad code.
+
+**Note:**  
+i. If you placed the banner into an Activity, please set the Activity object into ```object```.  
+&nbsp;&nbsp;&nbsp;&nbsp;If you placed the banner into a Fragment, please set the Fragment object into ```object```.  
+ii. You can set any String value into ```identifier```.  
+&nbsp;&nbsp;&nbsp;&nbsp;The value of ```identifier``` should be different for each banner.  
+iii. For ```adCode```, please contact Hotmob to obtain suitable ad code.  
 
 4.) Integrate callback method `didLoadBanner()`: This method will be called when the HotmobBanner ready. Add the banner into the current view as a subview.
 ```java
