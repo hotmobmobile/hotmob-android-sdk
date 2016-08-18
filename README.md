@@ -26,7 +26,6 @@ Visit http://www.hot-mob.com/ for more details.
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.GET_TASKS" />
 ```
 And add the following lines inside the <application> tag of the manifest:
 ```xml
