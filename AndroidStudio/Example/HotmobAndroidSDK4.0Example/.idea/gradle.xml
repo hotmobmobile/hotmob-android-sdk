@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/HotmobAndroidSDKExample" />
+            <option value="$PROJECT_DIR$/HotmobAndroidSDKManualRefreshExample" />
             <option value="$PROJECT_DIR$/HotmobAndroidSDKSlidingMenuExample" />
             <option value="$PROJECT_DIR$/HotmobSDK" />
             <option value="$PROJECT_DIR$/slidingmenu_library" />
@@ -18,6 +19,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/HotmobAndroidSDKExample" />
+            <option value="$PROJECT_DIR$/HotmobAndroidSDKManualRefreshExample" />
             <option value="$PROJECT_DIR$/HotmobAndroidSDKSlidingMenuExample" />
             <option value="$PROJECT_DIR$/HotmobSDK" />
             <option value="$PROJECT_DIR$/slidingmenu_library" />

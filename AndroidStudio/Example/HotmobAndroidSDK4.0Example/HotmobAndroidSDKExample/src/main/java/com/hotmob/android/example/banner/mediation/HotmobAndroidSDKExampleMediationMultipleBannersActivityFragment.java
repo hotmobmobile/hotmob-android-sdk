@@ -219,10 +219,10 @@ public class HotmobAndroidSDKExampleMediationMultipleBannersActivityFragment ext
                     String actionName = intent.getAction();
                     if (actionName.equals(HotmobManager.HotmobVideoPlayerMuteNotification)) {
                         // Mute
-                        AudioStreamingController.getInstance().mute();
+                        AudioStreamingController.getInstance(getActivity()).mute();
                     } else if (actionName.equals(HotmobManager.HotmobVideoPlayerUnmuteNotification)) {
                         // Unmute
-                        AudioStreamingController.getInstance().unmute();
+                        AudioStreamingController.getInstance(getActivity()).unmute();
                     }
                 }
             };
