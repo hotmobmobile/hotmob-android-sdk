@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HotmobAndroidSDK4.0Example.iml" filepath="$PROJECT_DIR$/HotmobAndroidSDK4.0Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/HotmobAndroidSDKExample/HotmobAndroidSDKExample.iml" filepath="$PROJECT_DIR$/HotmobAndroidSDKExample/HotmobAndroidSDKExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HotmobAndroidSDKManualRefreshExample/HotmobAndroidSDKManualRefreshExample.iml" filepath="$PROJECT_DIR$/HotmobAndroidSDKManualRefreshExample/HotmobAndroidSDKManualRefreshExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/HotmobAndroidSDKSlidingMenuExample/HotmobAndroidSDKSlidingMenuExample.iml" filepath="$PROJECT_DIR$/HotmobAndroidSDKSlidingMenuExample/HotmobAndroidSDKSlidingMenuExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/HotmobSDK/HotmobSDK.iml" filepath="$PROJECT_DIR$/HotmobSDK/HotmobSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/slidingmenu_library/slidingmenu_library.iml" filepath="$PROJECT_DIR$/slidingmenu_library/slidingmenu_library.iml" />

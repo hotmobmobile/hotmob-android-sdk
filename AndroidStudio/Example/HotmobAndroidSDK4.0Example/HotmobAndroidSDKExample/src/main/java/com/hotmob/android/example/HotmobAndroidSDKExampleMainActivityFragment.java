@@ -95,10 +95,10 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
             public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
                 if (isSoundEnable) {
                     // Unmute
-                    AudioStreamingController.getInstance().unmute();
+                    AudioStreamingController.getInstance(getActivity()).unmute();
                 } else {
                     // Mute
-                    AudioStreamingController.getInstance().mute();
+                    AudioStreamingController.getInstance(getActivity()).mute();
                 }
             }
         };
@@ -178,10 +178,10 @@ public class HotmobAndroidSDKExampleMainActivityFragment extends Fragment {
                         startActivity(iIntent);
                         break;
                     case 9:
-                        AudioStreamingController.getInstance().start("http://www.abstractpath.com/files/audiosamples/sample.mp3");
+                        AudioStreamingController.getInstance(getActivity()).start("http://dev.kevinhokh.com/res/demo.m4a");
                         break;
                     case 10:
-                        AudioStreamingController.getInstance().stop();
+                        AudioStreamingController.getInstance(getActivity()).stop();
                         break;
                     default:
                         break;

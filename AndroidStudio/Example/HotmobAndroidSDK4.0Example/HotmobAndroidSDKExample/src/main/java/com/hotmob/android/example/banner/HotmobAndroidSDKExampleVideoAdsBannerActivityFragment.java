@@ -133,10 +133,10 @@ public class HotmobAndroidSDKExampleVideoAdsBannerActivityFragment extends Fragm
             public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
                 if (isSoundEnable) {
                     // Unmute
-                    AudioStreamingController.getInstance().unmute();
+                    AudioStreamingController.getInstance(getActivity()).unmute();
                 } else {
                     // Mute
-                    AudioStreamingController.getInstance().mute();
+                    AudioStreamingController.getInstance(getActivity()).mute();
                 }
             }
 
