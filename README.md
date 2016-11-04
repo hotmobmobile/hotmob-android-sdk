@@ -27,6 +27,12 @@ Visit http://www.hot-mob.com/ for more details.
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
+
+> Add the following lines inside the <activity> tag of any of YOUR Activities that use our service:
+```xml
+android:configChanges="keyboardHidden|orientation|screenSize"
+```
+
 And add the following lines inside the <application> tag of the manifest:
 ```xml
 <activity
