@@ -21,14 +21,14 @@ Visit http://www.hot-mob.com/ for more details.
 
 3.) Add the permission and Hotmob Activity Information to Project Manifest file.
 
-> Add the following lines inside the <manifest> tag of the manifest:
+Add the following lines inside the <manifest> tag of the manifest:
 ``` xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
 
-> Add the following lines inside the <activity> tag of any of YOUR Activities that use our service:
+Add the following lines inside the <activity> tag of any of YOUR Activities that use our service:
 ```xml
 android:configChanges="keyboardHidden|orientation|screenSize"
 ```
