@@ -20,8 +20,7 @@
             android:id="@+id/hotmob_video_activity_texture_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:background="@android:color/black"/>
+            android:layout_centerInParent="true"/>
 
         <ProgressBar
             android:id="@+id/hotmob_video_player_progress_bar"
