@@ -48,7 +48,7 @@ And add the following lines inside the <application> tag of the manifest:
      android:name="com.hotmob.sdk.video.activity.HotmobVideoAdsActivity"
      android:configChanges="keyboardHidden|orientation|screenSize"
      android:screenOrientation="sensor"
-     android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+     android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 <activity
      android:name="com.hotmob.sdk.video.activity.HotmobVideoPlayerActivity"
      android:configChanges="keyboardHidden|orientation|screenSize"
