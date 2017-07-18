@@ -1,8 +1,0 @@
-<resources>
-
-    <string name="app_name">Hotmob Android SDK</string>
-    <string name="hotmob_video_ads_control_time_label_text">00:00</string>
-    <string name="hotmob_video_activity_close_fullscreen_button_desc">Close FullScreen</string>
-    <string name="hotmob_video_activity_close_button_desc">Close Button</string>
-
-</resources>

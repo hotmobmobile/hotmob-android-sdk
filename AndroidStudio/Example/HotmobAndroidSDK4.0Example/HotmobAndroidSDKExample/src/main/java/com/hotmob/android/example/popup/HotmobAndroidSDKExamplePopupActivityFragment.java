@@ -93,15 +93,13 @@ public class HotmobAndroidSDKExamplePopupActivityFragment extends Fragment {
             // isSoundEnable == false --> Mute
             public void hotmobBannerIsReadyChangeSoundSettings(boolean isSoundEnable) {
                 if (isSoundEnable) {
-                    // Unmute
-                    AudioStreamingController.getInstance(getActivity()).unmute();
-                } else {
-                    // Mute
                     AudioStreamingController.getInstance(getActivity()).mute();
+                } else {
+                    AudioStreamingController.getInstance(getActivity()).unmute();
                 }
             }
         };
 
-        HotmobManager.getPopup(HotmobAndroidSDKExamplePopupActivityFragment.this.getActivity(), listener, adCode, adCode, true);
+        HotmobManager.getPopup(HotmobAndroidSDKExamplePopupActivityFragment.this.getActivity(), listener, adCode, adCode, false);
     }
 }

@@ -5,4 +5,6 @@
     <string name="hotmob_video_activity_close_fullscreen_button_desc">Close FullScreen</string>
     <string name="hotmob_video_activity_close_button_desc">Close Button</string>
 
+    <string name="hotmob_video_action_btn_default_text">Learn More</string>
+
 </resources>
