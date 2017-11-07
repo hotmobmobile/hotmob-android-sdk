@@ -15,58 +15,43 @@ Visit http://www.hot-mob.com/ for more details.
 ---
 
 #### Android Studio
-1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
+1.) Add Hotmob repositories in your project gradle.
+```groovy
+repositories {
+    maven {
+        credentials {
+            username <Hotmob provided username>
+            password <Hotmob provided password>
+        }
+        url "http://sdk.hot-mob.com/artifactory/libs-release-local"
+    }
+}
+```
+You need to request for unique credentials for Hotmob repositories per application. It is not recommended to use Hotmob testing account in our example provided.
 
-2.) Import the Hotmob SDK into your Android Studio Project as a module. [Android Studio | How To Add A Library Project?](http://www.truiton.com/2015/02/android-studio-add-library-project/)
-
-3.) Add the permission and Hotmob Activity Information to Project Manifest file.
-
-Add the following lines inside the <manifest> tag of the manifest:
-``` xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+2.) Import HotmobSDK dependency.
+```groovy
+dependencies {
+    compile 'com.hotmob.sdk:hotmob_android_sdk:4.3.0'
+}
 ```
 
-Add the following lines inside the <activity> tag of any of YOUR Activities that use our service:
-```xml
-android:configChanges="keyboardHidden|orientation|screenSize"
-```
+##### Migrating to HotmobSDK 4.3
+If you are already using previous version of HotmobSDK, you need to do the following steps in order to upgrade your SDK to the latest 4.3.
 
-And add the following lines inside the <application> tag of the manifest:
-```xml
-<activity
-     android:name="com.hotmob.sdk.core.activity.HotmobPopupActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize"
-     android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-<activity
-     android:name="com.hotmob.sdk.inapp.activity.HotmobBrowserActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize"
-     android:launchMode="singleTop"
-     android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-<activity
-     android:name="com.hotmob.sdk.video.activity.HotmobVideoAdsActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize"
-     android:screenOrientation="user"
-     android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-<activity
-     android:name="com.hotmob.sdk.video.activity.HotmobVideoPlayerActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize"
-     android:launchMode="singleTop"
-     android:screenOrientation="sensor"
-     android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-```
+1.) Remove HotmobSDK module and add HotmobSDK dependency in Gradle.
+
+2.) Remove all HotmobSDK related activities in your Android Manifest.
 
 #### Eclipse
 
-1.) [Download the Hotmob Android SDK from Github](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) or download link we provided.
-
-2.) Follow the implementation guideline to import the Hotmob SDK into your project. [Implementation guide for Eclipse](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Implementation-guide-for-Eclipse)
+Eclipse implementation of Hotmob SDK is no longer supported. HotmobSDK.jar will be provided per request for Eclipse project integration.
 
 ### Requirements
 ---
 | HotmobSDK Version     | Minimum Android Target         | Notes |
 | --------              |---------                       |-------|
+| 4.3.x                 | Android level 15               |   TBC   |
 | 4.x                   | Android level 15               |   New advertisement format   |
 | 3.x                   | Android level 9                |   Architecture optimization    |
 
