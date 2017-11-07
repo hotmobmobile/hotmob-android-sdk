@@ -1,27 +1,30 @@
-###[Hotmob](http://www.hot-mob.com/)
+[Hotmob](http://www.hot-mob.com/)
+========
+
 Mobile Advertising with Hotmob, the first and largest mobile ad network in Hong Kong, where monetizes the mobile taffic of the top ranked publishers into revenue and meanwhile connects advertisers to target audience effectively.
 
 Visit http://www.hot-mob.com/ for more details.
 
-### How To Get Started
----
+How To Get Started
+------------------
 
 * [Download Hotmob Android SDK](https://github.com/hotmobmobile/hotmob-android-sdk/archive/master.zip) and try out the included sample project
 * Read the ["Getting Started" guide](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Getting-Started), ["Overview"](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Overview) , or [other articles on the Wiki](https://github.com/hotmobmobile/hotmob-android-sdk/wiki)
 * Check out the [documentation](https://github.com/hotmobmobile/hotmob-android-sdk/wiki) for a comprehensive look at all of the APIs available in Hotmob SDK
 * Read the [Hotmob SDK 4.0 Migration Guide](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/HotmobSDK-4.0-Migration-Guide) for an overview of the architectural changes from 3.0 or below
 
-### Integration 
----
+Integration 
+---------------
 
-#### Android Studio
+## Android Studio
+
 1.) Add Hotmob repositories in your project gradle.
 ```groovy
 repositories {
     maven {
         credentials {
-            username <Hotmob provided username>
-            password <Hotmob provided password>
+            username <Hotmob_provided_username>
+            password <Hotmob_provided_password>
         }
         url "http://sdk.hot-mob.com/artifactory/libs-release-local"
     }
@@ -36,26 +39,27 @@ dependencies {
 }
 ```
 
-##### Migrating to HotmobSDK 4.3
+### Migrating to HotmobSDK 4.3
+
 If you are already using previous version of HotmobSDK, you need to do the following steps in order to upgrade your SDK to the latest 4.3.
 
 1.) Remove HotmobSDK module and add HotmobSDK dependency in Gradle.
 
 2.) Remove all HotmobSDK related activities in your Android Manifest.
 
-#### Eclipse
+## Eclipse
 
 Eclipse implementation of Hotmob SDK is no longer supported. HotmobSDK.jar will be provided per request for Eclipse project integration.
 
-### Requirements
----
+Requirements
+------------
 | HotmobSDK Version     | Minimum Android Target         | Notes |
 | --------              |---------                       |-------|
 | 4.3.x                 | Android level 15               |   TBC   |
 | 4.x                   | Android level 15               |   New advertisement format   |
 | 3.x                   | Android level 9                |   Architecture optimization    |
 
-#### Implement
+## Implement
 
 1.) Following the HotmobAndroidSDKExampleBaseActivity.java in HotmobSDK example project to modify your base activity class.
 
@@ -74,10 +78,10 @@ HotmobManager.setDebug(true);
 HotmobManager.getPopup(this, listener, "launch_popup", "hotmob_uat_android_image_inapp_popup", true, false);
 ```
 
-### Basic Usage
----
+Basic Usage
+-----------
 
-#### Popup
+## Popup
 To create the Hotmob Popup can refercence following step.
 
 1.) Start the HotmobManager Service
@@ -108,7 +112,7 @@ For adCode, please contact Hotmob to obtain suitable ad code.
 
   ---
 
-####  Bottom Banner
+## Bottom Banner
 To create the Hotmob Banner can refercence following step.
 
 1.) Make sure HotmobManager service is started.
@@ -131,7 +135,7 @@ HotmobManagerListener listener = new HotmobManagerListener() {
 };
 ```
 
-3.)  Request the HotmobBanner 
+3.) Request the HotmobBanner 
 
 ```java
 View bottomBannerView = HotmobManager.getBanner(object, listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
@@ -170,7 +174,7 @@ public void onResizeBanner(View bannerView) {
 ```
 ---
 
-####  Banner in ListView
+## Banner in ListView
 To create the Hotmob Banner in ListView, please refer to the steps in "[Bottom Banner](#bottom-banner)", and add the following additional steps:
 
 1.) Set OnScrollListener for the ListView, override `onScroll()` method.
@@ -197,6 +201,7 @@ private void updateBannerPosition(){
 
 ---
 Other usage can refercence to wiki [Integrating Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Banner), [Integrating Popup](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Popup), [Integrating Native Video Ads](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Native-Video-Ads), [Integrating Third Party Ad Network](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Integrating-Third-Party-Ad-Network-for-Android).
-### Contact
----
+
+Contact
+-------
 Website: [http://www.hot-mob.com](http://www.hot-mob.com/)
