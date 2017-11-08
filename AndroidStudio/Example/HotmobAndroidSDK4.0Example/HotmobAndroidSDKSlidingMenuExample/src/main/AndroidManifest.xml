@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hotmob.com.hotmob_android_sdk_fragment_demo">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -23,26 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.hotmob.sdk.core.activity.HotmobPopupActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.hotmob.sdk.inapp.activity.HotmobBrowserActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.hotmob.sdk.video.activity.HotmobVideoAdsActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="user"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.hotmob.sdk.video.activity.HotmobVideoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="sensor"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
         <activity
             android:name=".HotmobDemoMainActivity"
             android:label="@string/title_activity_hotmob_demo_main"
