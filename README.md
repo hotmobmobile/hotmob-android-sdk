@@ -1,5 +1,5 @@
-[Hotmob](http://www.hot-mob.com/)
-========
+Hotmob
+======
 
 Mobile Advertising with Hotmob, the first and largest mobile ad network in Hong Kong, where monetizes the mobile taffic of the top ranked publishers into revenue and meanwhile connects advertisers to target audience effectively.
 
@@ -16,7 +16,7 @@ How To Get Started
 Integration 
 ---------------
 
-## Android Studio
+### Android Studio
 
 1.) Add Hotmob repositories in your project gradle.
 ```groovy
@@ -39,7 +39,7 @@ dependencies {
 }
 ```
 
-### Migrating to HotmobSDK 4.3
+#### Migrating to HotmobSDK 4.3
 
 If you are already using previous version of HotmobSDK, you need to do the following steps in order to upgrade your SDK to the latest 4.3.
 
@@ -47,7 +47,7 @@ If you are already using previous version of HotmobSDK, you need to do the follo
 
 2.) Remove all HotmobSDK related activities in your Android Manifest.
 
-## Eclipse
+### Eclipse
 
 Eclipse implementation of Hotmob SDK is no longer supported. HotmobSDK.jar will be provided per request for Eclipse project integration.
 
@@ -55,7 +55,7 @@ Requirements
 ------------
 | HotmobSDK Version     | Minimum Android Target         | Notes |
 | --------              |---------                       |-------|
-| 4.3.x                 | Android level 15               |   TBC   |
+| 4.3.x                 | Android level 15               |   Remove Eclipse support<br />New ad exchange support   |
 | 4.x                   | Android level 15               |   New advertisement format   |
 | 3.x                   | Android level 9                |   Architecture optimization    |
 
@@ -81,7 +81,7 @@ HotmobManager.getPopup(this, listener, "launch_popup", "hotmob_uat_android_image
 Basic Usage
 -----------
 
-## Popup
+### Popup
 To create the Hotmob Popup can refercence following step.
 
 1.) Start the HotmobManager Service
@@ -110,9 +110,7 @@ HotmobManager.getPopup(getActivity(), listener, identifier, adCode, true);
 You can set any String value into identifier.
 For adCode, please contact Hotmob to obtain suitable ad code.
 
-  ---
-
-## Bottom Banner
+### Bottom Banner
 To create the Hotmob Banner can refercence following step.
 
 1.) Make sure HotmobManager service is started.
@@ -172,9 +170,8 @@ public void onResizeBanner(View bannerView) {
     // Add your implementation here.
 }
 ```
----
 
-## Banner in ListView
+### Banner in ListView
 To create the Hotmob Banner in ListView, please refer to the steps in "[Bottom Banner](#bottom-banner)", and add the following additional steps:
 
 1.) Set OnScrollListener for the ListView, override `onScroll()` method.

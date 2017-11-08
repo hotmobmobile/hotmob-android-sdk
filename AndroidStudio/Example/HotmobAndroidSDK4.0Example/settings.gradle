@@ -1,1 +1,1 @@
-include ':HotmobAndroidSDKExample', 'HotmobSDK', ':HotmobAndroidSDKSlidingMenuExample', ':slidingmenu_library', ':HotmobAndroidSDKManualRefreshExample'
+include ':HotmobAndroidSDKExample', ':HotmobAndroidSDKSlidingMenuExample', ':slidingmenu_library', ':HotmobAndroidSDKManualRefreshExample'

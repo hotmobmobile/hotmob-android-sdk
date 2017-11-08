@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="hotmob_video_ads_control_bar_bgcolor">#66000000</color>
-
-    <color name="hotmob_video_progress">#df5c25</color>
-    <color name="hotmob_video_progress_background">#44413f</color>
-    <color name="hotmob_video_action_btn_color">#FFFFFF</color>
-    <color name="hotmob_video_action_button_shadow_color">#000000</color>
-</resources>
