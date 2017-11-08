@@ -47,6 +47,8 @@ If you are already using previous version of HotmobSDK, you need to do the follo
 
 2.) Remove all HotmobSDK related activities in your Android Manifest.
 
+After removing all Hotmob activities your Manifest should look like [this](https://github.com/hotmob-kenwong/hotmob-android-sdk/blob/master/AndroidStudio/Example/HotmobAndroidSDK4.0Example/HotmobAndroidSDKExample/src/main/AndroidManifest.xml).
+
 ### Eclipse
 
 Eclipse implementation of Hotmob SDK is no longer supported. HotmobSDK.jar will be provided per request for Eclipse project integration.
