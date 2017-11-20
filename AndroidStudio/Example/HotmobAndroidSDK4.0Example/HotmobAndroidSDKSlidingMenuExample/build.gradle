@@ -30,5 +30,5 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:support-v4:26.1.0'
 
-    compile 'com.hotmob.sdk:hotmob_android_sdk:4.3.0'
+    compile 'com.hotmob.sdk:hotmob_android_sdk:4.3.1'
 }
