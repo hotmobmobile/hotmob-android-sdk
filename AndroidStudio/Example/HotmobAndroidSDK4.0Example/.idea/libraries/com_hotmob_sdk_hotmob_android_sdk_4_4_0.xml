@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.hotmob.sdk:hotmob_android_sdk-4.4.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hotmob_android_sdk-4.4.0.aar/8f45fde1a7414fedf5dd2139cb660f4b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hotmob_android_sdk-4.4.0.aar/8f45fde1a7414fedf5dd2139cb660f4b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

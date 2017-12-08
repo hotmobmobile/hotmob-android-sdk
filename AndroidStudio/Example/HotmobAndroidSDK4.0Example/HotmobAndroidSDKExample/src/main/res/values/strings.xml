@@ -1,33 +1,237 @@
 <resources>
-    <string name="app_name">Hotmob Android SDK 4.0 Example</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_hotmob_android_sdkexample_banner">Banners</string>
-    <string name="title_activity_hotmob_android_sdkexample_popup">Popup</string>
-    <string name="title_button_normal_popup">Normal Popup</string>
-    <string name="title_button_videoads_popup">Video Ads Popup</string>
-    <string name="title_activity_hotmob_android_sdkexample_video_ads_banner">
-        HotmobAndroidSDKExampleVideoAdsBannerActivity
-    </string>
-    <string name="title_activity_hotmob_android_sdkexample_multiple_banners">
-        HotmobAndroidSDKExampleMultipleBannersActivity
-    </string>
-    <string name="title_activity_hotmob_android_sdkexample_mediation_banner">
-        HotmobAndroidSDKExampleMediationBannerActivity
-    </string>
-    <string name="title_activity_hotmob_android_sdkexample_mediation_popup">
-        HotmobAndroidSDKExampleMediationPopupActivity
-    </string>
-    <string name="title_activity_hotmob_android_sdkexample_mediation_video_ads_banner">
-        HotmobAndroidSDKExampleMediationVideoAdsBannerActivity
-    </string>
-    <string name="title_activity_hotmob_android_sdkexample_mediation_multiple_banners">
-        HotmobAndroidSDKExampleMediationMultipleBannersActivity
-    </string>
+    <string name="app_name">Hotmob SDK Example</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_location">Location Permission</string>
+
+    <string name="adcode_here">Ad Code Here</string>
+    <string name="load_fail">Load fail</string>
+    <string name="noaddcallback">No ad result</string>
+    <string name="banner_hide">Banner hide</string>
+    <string name="custom_adcode_hint">Type your adCode here</string>
+    <string name="custom_iu_hint">Type your IU here</string>
+
+    <string name="popup_item_null">Popup null</string>
+
+    <string name="data_example_intro">Check out Logcat to see the event calls.</string>
+    <string name="data_example_btn">Click action event</string>
+    <string name="data_example_null_btn">Null param event</string>
+    <string name="timed_event_start">Start tracking event</string>
+    <string name="timed_event_end">Stop and send</string>
+
+    <string name="reload_replace_fragment">Replace Fragment</string>
+    <string name="reload_add_fragment">Add Fragment</string>
+    <string name="reload_add_activity">Add Activity</string>
+    <string name="reload_activity_title">Activity %d</string>
+    <string name="blank_fragment_title">Fragment %d</string>
+
+    <string name="scrollview_title">Here is a ScrollView</string>
+    <string name="scrollview_intro">Use scrollView.getViewTreeObserver().addOnScrollChangedListener() to add scroll listener to update banner position.
+        You may also use scrollView.addScrollChangedListener() directly if you are building your app with min API level 23.</string>
+
+    <string name="tab_1">Tab 1</string>
+    <string name="tab_2">Tab 2</string>
+    <string name="tab_3">Tab 3</string>
+    <string name="viewpager_expln">Current SDK auto reload logic does not support ViewPager reload.
+        To handle banner reload correctly, special manual reload handling is implemented in this example.
+        All auto reload coding are removed (see ViewPagerFragment and ViewPagerItemFragment extension).</string>
+
+    <string name="internal_title">This is an internal page referred by Click to Internal Banner</string>
+
+    <!-- Menu -->
+
+    <string name="menu_banner">Banner</string>
+    <string name="menu_html_banner">HTML &amp; MRAID</string>
+    <string name="menu_video_banner">Video</string>
+    <string name="menu_mediation_banner">Mediation</string>
+    <string name="menu_other_banner">Other</string>
+
+    <string name="menu_popup">Popup</string>
+    <string name="menu_html_popup">HTML &amp; MRAID</string>
+    <string name="menu_video_popup">Video</string>
+    <string name="menu_mediation_popup">Mediation</string>
+    <string name="menu_other_popup">Other</string>
+
+    <string name="menu_datacollection">Data Collection</string>
+    <string name="menu_datacollection_normal">Example</string>
+
+    <string name="menu_behaviour">Behaviour</string>
+    <string name="menu_reload_add_f">Reload (Add Fragment)</string>
+    <string name="menu_reload_replace_f">Reload (Replace Fragment)</string>
+    <string name="menu_viewpager">ViewPager</string>
+    <string name="menu_scrollview">ScrollView</string>
+    <string name="menu_listview">ListView</string>
+    <string name="menu_recycleview">RecycleView</string>
+    <string name="menu_skip_resume_popup">Skip Popup Resume</string>
+
+    <!-- Image -->
+
+    <string-array name="creative_actions">
+        <item name="inapp">In App</item>
+        <item name="external">External</item>
+        <item name="playstore">Google Play</item>
+        <item name="dial">Dial</item>
+        <item name="sms">SMS</item>
+        <item name="email">Email</item>
+        <item name="video">Video</item>
+        <item name="youtube">Youtube</item>
+        <item name="internal">Internal</item>
+    </string-array>
+
+    <string-array name="image_banner_adcodes">
+        <item name="inapp">hotmob_android_v2_html_inapp_banner</item>
+        <item name="external">hotmob_android_v2_html_external_banner</item>
+        <item name="playstore">hotmob_android_v2_html_playstore_banner</item>
+        <item name="dial">hotmob_android_v2_html_dial_banner</item>
+        <item name="sms">hotmob_android_v2_html_sms_banner</item>
+        <item name="email">hotmob_android_v2_html_email_banner</item>
+        <item name="video">hotmob_android_v2_html_video_banner</item>
+        <item name="youtube">hotmob_android_v2_html_youtube_banner</item>
+        <item name="internal">hotmob_android_v2_html_internal_banner</item>
+    </string-array>
+
+    <!-- HTML & MRAID -->
+
+    <string-array name="html_creative_actions">
+        <item name="motion1">Motion 1</item>
+        <item name="motion2">Motion 2</item>
+        <item name="motion3">Motion 3</item>
+        <item name="click1">Click 1</item>
+        <item name="click2">Click 2</item>
+        <item name="click3">Click 3</item>
+        <item name="social">Social</item>
+        <item name="celtra_expand">Celtra Expand</item>
+        <item name="celtra_resize">Celtra Resize</item>
+        <item name="sizmek">Sizmek</item>
+        <item name="dcm">DCM</item>
+    </string-array>
+
+    <string-array name="html_banner_adcodes">
+        <item name="motion1">hotmob_android_v2_html_motion1_banner</item>
+        <item name="motion2">hotmob_android_v2_html_motion2_banner</item>
+        <item name="motion3">hotmob_android_v2_html_motion3_banner</item>
+        <item name="click1">hotmob_android_v2_html_click1_banner</item>
+        <item name="click2">hotmob_android_v2_html_click2_banner</item>
+        <item name="click3">hotmob_android_v2_html_click3_banner</item>
+        <item name="social">hotmob_android_v2_html_social_banner</item>
+        <item name="celtra_maxi">hotmob_android_v2_celtra_banner_maxi</item>
+        <item name="celtra_resize">hotmob_android_v2_celtra_banner_resize</item>
+        <item name="sizmek">hotmob_android_v2_sizmek_banner</item>
+        <item name="dcm">hotmob_uat_android_html_mraid_dcm_expand</item>
+    </string-array>
+
+    <!-- Popup -->
+
+    <string-array name="html_creative_actions_popup">
+        <item name="inapp">In App</item>
+        <item name="external">External</item>
+        <item name="playstore">Google Play</item>
+        <item name="dial">Dial</item>
+        <item name="sms">SMS</item>
+        <item name="email">Email</item>
+        <item name="video">Video</item>
+        <item name="youtube">Youtube</item>
+        <item name="internal">Internal</item>
+        <item name="motions">Motions</item>
+        <item name="sizmek">Sizmek</item>
+        <item name="dcm_popup">DCM Popup</item>
+        <item name="dcm_inter">DCM Interstitial</item>
+    </string-array>
+
+    <string-array name="html_popup_adcodes">
+        <item name="inapp">hotmob_android_v2_html_inapp_popup</item>
+        <item name="external">hotmob_android_v2_html_external_popup</item>
+        <item name="playstore">hotmob_android_v2_html_playstore_popup</item>
+        <item name="dial">hotmob_android_v2_html_dial_popup</item>
+        <item name="sms">hotmob_android_v2_html_sms_popup</item>
+        <item name="email">hotmob_android_v2_html_email_popup</item>
+        <item name="video">hotmob_android_v2_html_video_popup</item>
+        <item name="youtube">hotmob_android_v2_html_youtube_popup</item>
+        <item name="internal">hotmob_android_v2_html_internal_popup</item>
+        <item name="motions">hotmob_android_v2_html_all_motion_popup</item>
+        <item name="sizmek">hotmob_uat_android_html_mraid_sizmek_popup</item>
+        <item name="dcm_popup">hotmob_uat_android_html_mraid_dcm_popup</item>
+        <item name="dcm_inter">hotmob_uat_android_html_mraid_dcm_Interstitial</item>
+    </string-array>
+
+    <!-- Video -->
+
+    <string-array name="video_creative_actions">
+        <item name="inapp">In App</item>
+        <item name="external">External</item>
+        <item name="playstore">Google Play</item>
+        <item name="dial">Dial</item>
+        <item name="sms">SMS</item>
+        <item name="email">Email</item>
+        <item name="youtube">Youtube</item>
+        <item name="internal">Internal</item>
+    </string-array>
+
+    <string-array name="video_banner_adcodes">
+        <item name="inapp">hotmob_android_v2_video_inapp_banner</item>
+        <item name="external">hotmob_android_v2_video_external_banner</item>
+        <item name="playstore">hotmob_android_v2_video_playstore_banner</item>
+        <item name="dial">hotmob_android_v2_video_dial_banner</item>
+        <item name="sms">hotmob_android_v2_video_sms_banner</item>
+        <item name="email">hotmob_android_v2_video_email_banner</item>
+        <item name="youtube">hotmob_android_v2_video_youtube_banner</item>
+        <item name="internal">hotmob_android_v2_video_internal_banner</item>
+    </string-array>
+
+    <string-array name="video_popup_adcodes">
+        <item name="inapp">hotmob_android_v2_video_inapp_popup</item>
+        <item name="external">hotmob_android_v2_video_external_popup</item>
+        <item name="playstore">hotmob_android_v2_video_playstore_popup</item>
+        <item name="dial">hotmob_android_v2_video_dial_popup</item>
+        <item name="sms">hotmob_android_v2_video_sms_popup</item>
+        <item name="email">hotmob_android_v2_video_email_popup</item>
+        <item name="youtube">hotmob_android_v2_video_youtube_popup</item>
+        <item name="internal">hotmob_android_v2_video_internal_popup</item>
+    </string-array>
+
+    <!-- Mediation -->
+
+    <string-array name="mediation_banner">
+        <item name="inapp">/13648685/hotmob_uat_android_image_inapp_banner</item>
+        <item name="external">/13648685/hotmob_uat_android_image_external_banner</item>
+        <item name="video">/13648685/hotmob_uat_android_image_video_banner</item>
+        <item name="video_banner">/13648685/hotmob_uat_android_videoads_banner</item>
+        <item name="celtra_expand">/13648685/hotmob_uat_android_html_celtra_expand</item>
+        <item name="celtra_resize">/13648685/hotmob_uat_android_html_celtra_resize</item>
+    </string-array>
+
+    <string-array name="mediation_popup">
+        <item name="inapp">/13648685/hotmob_uat_android_image_inapp_popup</item>
+        <item name="external">/13648685/hotmob_uat_android_image_external_popup</item>
+        <item name="video">/13648685/hotmob_uat_android_image_video_popup</item>
+        <item name="video_popup">/13648685/hotmob_uat_android_video_inapp_popup</item>
+    </string-array>
+
+    <!-- Other -->
+
+    <string-array name="other_creative_actions">
+        <item name="frx_1">FRX 1</item>
+        <item name="frx_2">FRX 2</item>
+        <item name="frx_3">FRX 3</item>
+    </string-array>
+
+    <string-array name="other_banner_adcodes">
+        <item name="frx_1">hm_javascript_4_0_frx_web_mobile_banner_320x50</item>
+        <item name="frx_2">hm_javascript_4_0_frx_web_mobile_banner_320x100</item>
+        <item name="frx_3">hm_javascript_4_0_frx_web_mobile_banner_300x250</item>
+    </string-array>
+
+    <string-array name="other_creative_actions_popup">
+        <item name="frx">FRX</item>
+    </string-array>
+
+    <string-array name="other_popup_adcodes">
+        <item name="frx">hm_javascript_4_0_frx_web_mobile_banner_320x460</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_2_textview">Hello! This is fragment 2!</string>
-    <string name="fragment_1_textview">HelloWorld! This is fragment 1</string>
-    <string name="title_activity_hotmob_demo_multiple_fragment">HotmobDemoMultipleFragmentActivity</string>
-
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_busy">BusyActivity</string>
 </resources>

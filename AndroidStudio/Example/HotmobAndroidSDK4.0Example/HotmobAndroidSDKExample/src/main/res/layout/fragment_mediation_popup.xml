@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hotmob.hotmobsdk_demo.popup.MediationPopupFragment">
+
+    <EditText
+        android:id="@+id/custom_iu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:hint="@string/custom_iu_hint"/>
+
+    <ListView
+        android:id="@+id/popup_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorPrimary"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>
