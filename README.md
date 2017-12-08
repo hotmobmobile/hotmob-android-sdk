@@ -75,9 +75,9 @@ HotmobManager.setDebug(true);
 
 2. Following the [BaseActivity.java](https://github.com/hotmob-kenwong/hotmob-android-sdk/blob/master/AndroidStudio/Example/HotmobAndroidSDK4.0Example/HotmobAndroidSDKExample/src/main/java/com/hotmob/android/example/BaseActivity.java) and [BaseFragment.java](https://github.com/hotmob-kenwong/hotmob-android-sdk/blob/master/AndroidStudio/Example/HotmobAndroidSDK4.0Example/HotmobAndroidSDKExample/src/main/java/com/hotmob/android/example/BaseFragment.java) in HotmobSDK example project to modify your base Activity and Fragment class.
 
-...If you don't have any base class, you can put all the required Hotmob lifecycle calling in your Activity and Fragment.
+If you don't have any base class, you can put all the required Hotmob lifecycle calling in your Activity and Fragment.
 
-...Please refer to [Getting Started](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Getting-Started#integrate-hotmob-android-sdk-in-activity-based-application) for details.
+Please refer to [Getting Started](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Getting-Started#integrate-hotmob-android-sdk-in-activity-based-application) for details.
 
 > You can try to implement following code to confirm `HotmobSDK`  is functional in your project.
 ``` java
@@ -134,13 +134,13 @@ HotmobManager.getBanner(this, listener, width, identifier, adCode);
 
 **Note:**
 
-..1. You can set any String value into identifier. The value of identifier should be different for each popup/banner.  
-..2. For adCode, please contact Hotmob to obtain suitable ad code.  
-..3. For width, it is recommended to use HotmobManager.getScreenWidth(activity) if the banner width is equal to screen width. Otherwise, you should input a value in pixel.
+1. You can set any String value into identifier. The value of identifier should be different for each popup/banner.  
+2. For adCode, please contact Hotmob to obtain suitable ad code.  
+3. For width, it is recommended to use HotmobManager.getScreenWidth(activity) if the banner width is equal to screen width. Otherwise, you should input a value in pixel.
 
 ```java
 // Activity
-HotmobManager.getBanner(this, listener, width, identifier, adCode);
+HotmobManager.getBanner(this, listener, HotmobManager.getScreenWidth(this), identifier, adCode);
 
 // Fragment
 HotmobManager.getBanner(this, listener, HotmobManager.getScreenWidth(getActivity()), identifier, adCode);
@@ -186,7 +186,7 @@ Normally, you can set your banner container height to 'wrap_content', and Hotmob
 ```
 
 ### Banner in ListView
-To create the Hotmob Banner in ListView, please refer to the steps in "[Banner](#banner)", and add the following additional steps:
+To create the Hotmob Banner in ListView, please refer to the steps in [Banner](#banner), and add the following additional steps:
 
 #### ListView
 
