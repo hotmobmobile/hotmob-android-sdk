@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white"
-    tools:context="com.hotmob.hotmobsdk_demo.reload.BlankFragment">
+    tools:context="com.hotmob.android.example.reload.BlankFragment">
 
     <TextView
         android:id="@+id/blank_fragment_title"
