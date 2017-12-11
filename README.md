@@ -30,7 +30,7 @@ repositories {
     }
 }
 ```
-You need to request for unique credentials for Hotmob repositories per application. It is not recommended to use Hotmob testing account in our example provided.
+You need to request for unique credentials for Hotmob repositories per application.
 
 2. Import HotmobSDK dependency.
 ```groovy
