@@ -26,21 +26,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".orientation.PopupOrientationActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".reload.AddFragmentActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
             android:name=".reload.ReplaceFragmentActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".reload.slowresume.BusyActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_busy"
             android:screenOrientation="portrait" />
     </application>
 
