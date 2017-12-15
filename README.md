@@ -35,7 +35,7 @@ You need to request for unique credentials for Hotmob repositories per applicati
 2. Import HotmobSDK dependency.
 ```groovy
 dependencies {
-    compile 'com.hotmob.sdk:hotmob_android_sdk:4.4.1'
+    compile 'com.hotmob.sdk:hotmob_android_sdk:4.4.2'
 }
 ```
 
