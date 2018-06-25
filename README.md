@@ -35,7 +35,7 @@ You need to request for unique credentials for Hotmob repositories per applicati
 2. Import HotmobSDK dependency.
 ```groovy
 dependencies {
-    compile 'com.hotmob.sdk:hotmob_android_sdk:4.4.2'
+    compile 'com.hotmob.sdk:hotmob_android_sdk:4.6.0'
 }
 ```
 
@@ -57,6 +57,7 @@ Requirements
 ------------
 | HotmobSDK Version     | Minimum Android Target         | Notes |
 | --------              |---------                       |-------|
+| 4.6.x                 | Android level 15               |   Support Android API level 27   |
 | 4.4.x                 | Android level 15               |   Data Collection<br />Enhanced Logging for debug   |
 | 4.3.x                 | Android level 15               |   Remove Eclipse support<br />New ad exchange support   |
 | 4.x                   | Android level 15               |   New advertisement format   |
