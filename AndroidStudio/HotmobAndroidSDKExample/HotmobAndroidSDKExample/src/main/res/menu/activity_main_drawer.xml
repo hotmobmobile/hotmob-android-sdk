@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/menu_banner">
+            <menu>
+                <item
+                    android:id="@+id/nav_html_banner"
+                    android:icon="@android:drawable/ic_menu_gallery"
+                    android:title="@string/menu_html_banner" />
+                <item
+                    android:id="@+id/nav_video_banner"
+                    android:icon="@android:drawable/ic_media_play"
+                    android:title="@string/menu_video_banner" />
+                <item
+                    android:id="@+id/nav_mediation_banner"
+                    android:icon="@android:drawable/ic_menu_mapmode"
+                    android:title="@string/menu_mediation_banner" />
+                <item
+                    android:id="@+id/nav_other_banner"
+                    android:icon="@android:drawable/ic_menu_help"
+                    android:title="@string/menu_other_banner" />
+            </menu>
+        </item>
+        <item android:title="@string/menu_interstitial">
+            <menu>
+                <item
+                    android:id="@+id/nav_html_interstitial"
+                    android:icon="@android:drawable/ic_menu_gallery"
+                    android:title="@string/menu_html_interstitial" />
+                <item
+                    android:id="@+id/nav_video_interstitial"
+                    android:icon="@android:drawable/ic_media_play"
+                    android:title="@string/menu_video_interstitial" />
+                <item
+                    android:id="@+id/nav_mediation_interstitial"
+                    android:icon="@android:drawable/ic_menu_mapmode"
+                    android:title="@string/menu_mediation_interstitial" />
+                <item
+                    android:id="@+id/nav_other_interstitial"
+                    android:icon="@android:drawable/ic_menu_help"
+                    android:title="@string/menu_other_interstitial" />
+            </menu>
+        </item>
+        <item android:title="@string/menu_scrollableview">
+            <menu>
+                <item
+                    android:id="@+id/nav_scrollview"
+                    android:icon="@android:drawable/ic_dialog_dialer"
+                    android:title="@string/menu_scrollview" />
+                <item
+                    android:id="@+id/nav_listview"
+                    android:icon="@android:drawable/ic_dialog_dialer"
+                    android:title="@string/menu_listview" />
+                <item
+                    android:id="@+id/nav_recycleview"
+                    android:icon="@android:drawable/ic_dialog_dialer"
+                    android:title="@string/menu_recycleview" />
+            </menu>
+        </item>
+        <item android:title="@string/menu_reload">
+            <menu>
+                <item
+                    android:id="@+id/nav_reload_add_fragment"
+                    android:icon="@android:drawable/ic_popup_sync"
+                    android:title="@string/menu_reload_add_fragment" />
+                <item
+                    android:id="@+id/nav_reload_replace_fragment"
+                    android:icon="@android:drawable/ic_popup_sync"
+                    android:title="@string/menu_reload_replace_fragment" />
+                <item
+                    android:id="@+id/nav_reload_viewpager"
+                    android:icon="@android:drawable/ic_menu_slideshow"
+                    android:title="@string/menu_reload_viewpager" />
+                <item
+                    android:id="@+id/nav_reload_recycleview"
+                    android:icon="@android:drawable/ic_dialog_dialer"
+                    android:title="@string/menu_reload_recycleview" />
+                <item
+                    android:id="@+id/nav_launch_interstitial"
+                    android:icon="@android:drawable/ic_popup_sync"
+                    android:title="@string/menu_launch_interstitial" />
+                <item
+                    android:id="@+id/nav_fragment_with_no_ad"
+                    android:icon="@android:drawable/ic_popup_sync"
+                    android:title="@string/menu_fragment_with_no_ad" />
+                <item
+                    android:id="@+id/nav_skip_resume_interstitial"
+                    android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                    android:title="@string/menu_skip_resume_interstitial" />
+                <item
+                    android:id="@+id/nav_deep_link_interstitial"
+                    android:icon="@android:drawable/ic_menu_share"
+                    android:title="@string/menu_deep_link_interstitial" />
+            </menu>
+        </item>
+        <item android:title="@string/menu_datacollection">
+            <menu>
+                <item
+                    android:id="@+id/nav_data_normal"
+                    android:icon="@android:drawable/ic_menu_compass"
+                    android:title="@string/menu_datacollection_normal" />
+            </menu>
+        </item>
+        <item android:title="@string/menu_compatibility">
+            <menu>
+                <item
+                    android:id="@+id/nav_backward_compatible"
+                    android:icon="@android:drawable/ic_menu_revert"
+                    android:title="@string/menu_backward_compatible" />
+            </menu>
+        </item>
+    </group>
+
+</menu>
