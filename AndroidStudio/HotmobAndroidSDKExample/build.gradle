@@ -22,8 +22,8 @@ allprojects {
         maven {
             credentials {
                 // You need to request for unique credentials for Hotmob repositories per application
-                username "hotmob.tester"
-                password "P@ssw0rd"
+                username <HOTMOB_PROVIDED_USERNAME>
+                password <HOTMOB_PROVIDED_PASSWORD>
             }
             url "http://sdk.hot-mob.com/artifactory/libs-release-local"
         }
