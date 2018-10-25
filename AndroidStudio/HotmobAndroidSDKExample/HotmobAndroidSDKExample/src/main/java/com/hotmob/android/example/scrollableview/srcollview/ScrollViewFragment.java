@@ -39,7 +39,7 @@ public class ScrollViewFragment extends Fragment {
         // Create Banner Controller Object
         videoBanner = new Banner.Builder(getContext())
                 .setIdentifier("ScrollViewVideo")
-                .setAutoPauseMode(VideoView.getDefaultAutoPauseMode())   // for Video auto-pause when out of screen
+                .shouldAutoPause()   // for Video auto-pause when out of screen
                 .build();
 
         // Set ad code
