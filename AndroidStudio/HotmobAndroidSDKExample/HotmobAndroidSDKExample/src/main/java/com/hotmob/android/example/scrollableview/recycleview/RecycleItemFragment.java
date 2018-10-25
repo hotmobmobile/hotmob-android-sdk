@@ -46,7 +46,7 @@ public class RecycleItemFragment extends Fragment {
         // Create Banner Controller Object
         topBanner = new Banner.Builder(getContext())
                 .setIdentifier("TopBanner")
-                .setAutoPauseMode(VideoView.getDefaultAutoPauseMode())   // for Video auto-pause when out of screen
+                .shouldAutoPause()   // for Video auto-pause when out of screen
                 .build();
 
         // Set ad code

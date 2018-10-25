@@ -60,7 +60,7 @@ public class RecycleViewFragment extends Fragment {
         // Create Banner Controller Object
         instreamBanner = new Banner.Builder(getContext())
                 .setIdentifier("InstreamBanner")
-                .setAutoPauseMode(VideoView.getDefaultAutoPauseMode())
+                .shouldAutoPause()
                 .build();
 
         // Set ad code
