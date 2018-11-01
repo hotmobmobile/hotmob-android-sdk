@@ -35,13 +35,13 @@ You need to request for unique credentials for Hotmob repositories per applicati
 2. Import HotmobSDK dependency.
 ```groovy
 dependencies {
-    compile 'com.hotmob.sdk:hotmob_android_sdk:4.4.2'
+    compile 'com.hotmob.sdk:hotmob_android_sdk:4.6.1'
 }
 ```
 
-#### Migrating to HotmobSDK 4.4
+#### Migrating to HotmobSDK 4.6
 
-If you are already using previous version of HotmobSDK, you need to do the following steps in order to upgrade your SDK to the latest 4.4.
+If you are already using previous version of HotmobSDK, you need to do the following steps in order to upgrade your SDK to the latest 4.6.
 
 1. Remove HotmobSDK module and add HotmobSDK dependency in Gradle.
 
