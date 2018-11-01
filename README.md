@@ -57,6 +57,7 @@ Requirements
 ------------
 | HotmobSDK Version     | Minimum Android Target         | Notes |
 | --------              |---------                       |-------|
+| 4.6.x                 | Android level 15               |   Support Android API level 27   |
 | 4.4.x                 | Android level 15               |   Data Collection<br />Enhanced Logging for debug   |
 | 4.3.x                 | Android level 15               |   Remove Eclipse support<br />New ad exchange support   |
 | 4.x                   | Android level 15               |   New advertisement format   |
