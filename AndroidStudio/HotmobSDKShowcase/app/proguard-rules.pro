@@ -20,10 +20,13 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+# Google GMS
 -keep public class com.google.android.gms.** { public *; }
 -dontwarn com.google.android.gms.**
 
+# Retrofit2 and Okhttp3
 -dontwarn okio.**
 -dontwarn retrofit2.Platform$Java8
 
+# ProGuard bug (optional)
 -optimizations !class/unboxing/enum
