@@ -64,13 +64,10 @@ class BannerInRecycleViewFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // call loadAd() here, DO NOT call loadAd() in adapter!!
+    override fun onDestroyView() {
         listAdapter!!.adMap.values.forEach {
-            it.loadAd()
+            it.destroy()
         }
+        super.onDestroyView()
     }
-
 }

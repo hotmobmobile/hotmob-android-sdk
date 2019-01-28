@@ -52,18 +52,13 @@ class VideoBannerShowcaseFragment : Fragment(), View.OnClickListener, HotmobAdLi
         }
 
         banner.obstacleViews.add(floatingObstacle)
-    }
-
-    override fun onStart() {
-        super.onStart()
         banner.listener = this
         banner.deepLinkListener = this
     }
 
-    override fun onStop() {
-        super.onStop()
-        banner.listener = null
-        banner.deepLinkListener = null
+    override fun onDestroyView() {
+        banner.destroy()
+        super.onDestroyView()
     }
 
     override fun onClick(v: View?) {
