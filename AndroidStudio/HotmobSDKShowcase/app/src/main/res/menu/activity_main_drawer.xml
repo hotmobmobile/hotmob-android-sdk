@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <item android:title="Banner">
+        <menu>
+            <item
+                    android:id="@+id/nav_banner_showcase"
+                    android:icon="@android:drawable/ic_menu_gallery"
+                    android:title="Showcase"/>
+            <item
+                    android:id="@+id/nav_banner_recycleview"
+                    android:icon="@android:drawable/ic_menu_agenda"
+                    android:title="RecycleView"/>
+            <item
+                    android:id="@+id/nav_banner_listview"
+                    android:icon="@android:drawable/ic_menu_agenda"
+                    android:title="ListView"/>
+        </menu>
+    </item>
+
+    <item android:title="Video Banner">
+        <menu>
+            <item
+                    android:id="@+id/nav_video_banner_showcase"
+                    android:icon="@android:drawable/ic_menu_gallery"
+                    android:title="Showcase"/>
+        </menu>
+    </item>
+
+    <item android:title="Interstitial">
+        <menu>
+            <item
+                    android:id="@+id/nav_interstitial_showcase"
+                    android:icon="@android:drawable/ic_menu_gallery"
+                    android:title="Showcase"/>
+        </menu>
+    </item>
+
+    <item android:title="Video Interstitial">
+        <menu>
+            <item
+                    android:id="@+id/nav_video_interstitial_showcase"
+                    android:icon="@android:drawable/ic_menu_gallery"
+                    android:title="Showcase"/>
+        </menu>
+    </item>
+
+    <item android:title="Data Collection">
+        <menu>
+            <item
+                    android:id="@+id/nav_data_collection"
+                    android:icon="@android:drawable/ic_menu_view"
+                    android:title="Example"/>
+        </menu>
+    </item>
+
+</menu>
