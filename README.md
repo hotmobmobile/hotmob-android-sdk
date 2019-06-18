@@ -9,13 +9,17 @@ Hotmob SDK v5 is backward Compatible with SDK v4. Old implementation using **Hot
 
 ### Compatibility
 * Minimum Android SDK: API level 15
-* Fully Tested Android SDK: API level 27
+* Fully Tested Android SDK: API level 28
 
 ### Integration
 * [Installation](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Installation-v5)
 * [Basic Usage](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5)
   * [Interstitial](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#interstitial)
   * [Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#banner)
+    * [Animation](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#animation)
+    * [RecyclerView](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#recyclerview)
+    * [ListView](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#listview)
+  * [Scrollers](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#scrollers)
   * [Ad Event](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v5#ad-event-listener)
 * [Ad Lifecycle](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Ad-Lifecycle-v5)
 * [Ad Reloading](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Ad-Reloading-v5)
