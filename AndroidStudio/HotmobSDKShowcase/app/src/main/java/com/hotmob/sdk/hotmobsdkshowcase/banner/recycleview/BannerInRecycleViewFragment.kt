@@ -50,6 +50,7 @@ class BannerInRecycleViewFragment : Fragment() {
                 ad1.identifier = "List Banner 1"
                 ad1.adCode = context.resources.getStringArray(R.array.banner_click_action_adcodes)[0]
                 ad1.focusableAd = false
+                ad1.animated = true
                 val ad2 = HotmobBanner(context)
                 ad2.identifier = "List Banner 2"
                 ad2.adCode = context.resources.getStringArray(R.array.banner_click_action_adcodes)[2]

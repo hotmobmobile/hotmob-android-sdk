@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.android.tools.build:gradle:3.4.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -20,8 +20,8 @@ allprojects {
         jcenter()
         maven {
             credentials {
-                username 'hotmob.tester'
-                password 'P@ssw0rd'
+                username 'HOTMOB_PROVIDED_USERNAME'
+                password 'HOTMOB_PROVIDED_PASSWORD'
             }
             url "http://sdk.hot-mob.com/artifactory/libs-release-local"
         }
