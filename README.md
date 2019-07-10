@@ -27,6 +27,7 @@ Hotmob SDK v5 is backward Compatible with SDK v4. Old implementation using **Hot
   * [Special Cases](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Special-Cases-Handling-v5)
 * [Data Collection](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Data-Collection-v5)
 * [Location Collection](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Location-Collection-v5)
+* [Support Google Ad](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Support-Google-Ad)
 * [Migrate from v4 to v5](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Migrate-from-v4-to-v5)
 * [Debugging](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Debugging-v5)
 
