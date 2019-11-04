@@ -1,6 +1,6 @@
 package com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.listitem_dummyitem.view.*
 class ListItemRecyclerViewAdapter(
     private val values: List<DummyItem>,
     val adMap: Map<Int, HotmobBanner>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     companion object {
         const val NORMAL = 0
@@ -33,7 +33,7 @@ class ListItemRecyclerViewAdapter(
      * @param viewType
      * @return RecyclerView.ViewHolder <-- PAY ATTENTION!!
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
         return if (viewType == AD) {
             HotmobAdViewHolder(HotmobAdViewHolder.getAdViewHolderView(parent))  // use Hotmob HotmobAdViewHolder
         } else {
@@ -59,7 +59,7 @@ class ListItemRecyclerViewAdapter(
      * @param holder RecyclerView.ViewHolder <-- PAY ATTENTION!!
      * @param position Int
      */
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         // calculate number of item shift by adding ads
         var numberOfAdAbove = 0
         adMap.keys.forEach {
@@ -80,7 +80,7 @@ class ListItemRecyclerViewAdapter(
 
     override fun getItemCount(): Int = values.size + adMap.size
 
-    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(val view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         val idView: TextView = view.item_number
         val contentView: TextView = view.content
 

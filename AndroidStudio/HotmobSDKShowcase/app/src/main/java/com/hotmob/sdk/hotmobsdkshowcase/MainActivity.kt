@@ -1,11 +1,11 @@
 package com.hotmob.sdk.hotmobsdkshowcase
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
+import com.google.android.material.navigation.NavigationView
+import androidx.fragment.app.Fragment
+import androidx.core.view.GravityCompat
+import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import com.hotmob.sdk.hotmobsdkshowcase.banner.BannerShowcaseFragment
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val targetPage: Fragment = when (item.itemId) {
+        val targetPage: androidx.fragment.app.Fragment = when (item.itemId) {
             R.id.nav_banner_recycleview -> BannerInRecycleViewFragment()
             R.id.nav_banner_listview -> BannerInListViewFragment()
             R.id.nav_video_banner_showcase -> VideoBannerShowcaseFragment()

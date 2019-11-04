@@ -1,7 +1,7 @@
 package com.hotmob.sdk.hotmobsdkshowcase.interstitial
 
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_interstitialitem.view.*
 class InterstitialItemAdapter(
     private val values: List<InterstitialItem>,
     private val listener: ItemClickListener
-) : RecyclerView.Adapter<InterstitialItemAdapter.ViewHolder>() {
+) : androidx.recyclerview.widget.RecyclerView.Adapter<InterstitialItemAdapter.ViewHolder>() {
 
     private val onClickListener: View.OnClickListener
 
@@ -48,7 +48,7 @@ class InterstitialItemAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(val view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         val name: TextView = view.itemName
         val adCode: TextView = view.adCode
 

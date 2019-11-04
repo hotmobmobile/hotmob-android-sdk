@@ -1,8 +1,8 @@
 package com.hotmob.sdk.hotmobsdkshowcase.interstitial
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_interstitialitem_list.*
 /**
  * A fragment representing a list of Items.
  */
-class InterstitialShowcaseFragment : Fragment(),
+class InterstitialShowcaseFragment : androidx.fragment.app.Fragment(),
     InterstitialItemAdapter.ItemClickListener,
     HotmobAdListener,
     HotmobAdDeepLinkListener {
@@ -43,7 +43,7 @@ class InterstitialShowcaseFragment : Fragment(),
 
         // Set the adapter
         with(list) {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
 
             val interstitialArray = mutableListOf<InterstitialItem>()
 
