@@ -20,8 +20,8 @@ allprojects {
         jcenter()
         maven {
             credentials {
-                username 'hotmob.tester'
-                password 'P@ssw0rd'
+                username 'HOTMOB_PROVIDED_USERNAME'
+                password 'HOTMOB_PROVIDED_PASSWORD'
             }
             url "http://sdk.hot-mob.com/artifactory/libs-release-local"
         }
