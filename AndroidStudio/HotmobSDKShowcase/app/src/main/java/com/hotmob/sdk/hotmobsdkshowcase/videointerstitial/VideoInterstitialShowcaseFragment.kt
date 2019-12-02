@@ -1,8 +1,8 @@
 package com.hotmob.sdk.hotmobsdkshowcase.videointerstitial
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_interstitialitem_list.*
 /**
  * A fragment representing a list of Items.
  */
-class VideoInterstitialShowcaseFragment : Fragment(), InterstitialItemAdapter.ItemClickListener, HotmobAdDeepLinkListener {
+class VideoInterstitialShowcaseFragment : androidx.fragment.app.Fragment(), InterstitialItemAdapter.ItemClickListener, HotmobAdDeepLinkListener {
 
     private val interstitial = HotmobInterstitial("ShowcaseInterstitial", "")
 
@@ -38,7 +38,7 @@ class VideoInterstitialShowcaseFragment : Fragment(), InterstitialItemAdapter.It
 
         // Set the adapter
         with(list) {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
 
             val interstitialArray = mutableListOf<InterstitialItem>()
 

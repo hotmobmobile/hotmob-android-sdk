@@ -1,10 +1,10 @@
 package com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +19,7 @@ import kotlin.collections.set
 /**
  * A fragment representing a list of Items.
  */
-class BannerInRecycleViewFragment : Fragment() {
+class BannerInRecycleViewFragment : androidx.fragment.app.Fragment() {
 
     private var columnCount = 1
     private var listAdapter: ListItemRecyclerViewAdapter? = null
@@ -31,11 +31,11 @@ class BannerInRecycleViewFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_banner_recycleview, container, false)
 
         // Set the adapter
-        if (view is RecyclerView) {
+        if (view is androidx.recyclerview.widget.RecyclerView) {
             with(view) {
                 layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
+                    columnCount <= 1 -> androidx.recyclerview.widget.LinearLayoutManager(context)
+                    else -> androidx.recyclerview.widget.GridLayoutManager(context, columnCount)
                 }
 
                 val dummyItems = ArrayList<DummyItem>()

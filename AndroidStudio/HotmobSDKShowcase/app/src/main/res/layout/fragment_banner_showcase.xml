@@ -8,7 +8,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".banner.BannerShowcaseFragment">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -16,9 +16,10 @@
                 android:id="@+id/customAdCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Type your ad code here."
                 android:imeOptions="actionDone"
                 android:singleLine="true"
-                android:hint="Type your ad code here." />
+                app:layout_constraintTop_toTopOf="parent" />
 
         <HorizontalScrollView
                 android:id="@+id/clickActionsContainer"
@@ -82,6 +83,6 @@
 
         </LinearLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

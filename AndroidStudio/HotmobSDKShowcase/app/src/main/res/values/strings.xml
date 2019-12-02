@@ -16,27 +16,27 @@
     </string-array>
 
     <string-array name="banner_click_action_adcodes">
-        <item name="inapp">hotmob_android_v2_html_inapp_banner</item>
-        <item name="external">hotmob_android_v2_html_external_banner</item>
-        <item name="playstore">hotmob_android_v2_html_playstore_banner</item>
-        <item name="dial">hotmob_android_v2_html_dial_banner</item>
-        <item name="sms">hotmob_android_v2_html_sms_banner</item>
-        <item name="email">hotmob_android_v2_html_email_banner</item>
-        <item name="video">hotmob_android_v2_html_video_banner</item>
-        <item name="youtube">hotmob_android_v2_html_youtube_banner</item>
-        <item name="internal">hotmob_android_v2_html_internal_banner</item>
+        <item name="inapp">hotmob_android_banner_inapp</item>
+        <item name="external">hotmob_android_banner_external</item>
+        <item name="playstore">hotmob_android_banner_playstore</item>
+        <item name="dial">hotmob_android_banner_dial</item>
+        <item name="sms">hotmob_android_banner_sms</item>
+        <item name="email">hotmob_android_banner_email</item>
+        <item name="video">hotmob_android_banner_video</item>
+        <item name="youtube">hotmob_android_banner_youtube</item>
+        <item name="internal">hotmob_android_banner_internal</item>
     </string-array>
 
     <string-array name="interstitial_click_action_adcodes">
-        <item name="inapp">hotmob_android_v2_html_inapp_popup</item>
-        <item name="external">hotmob_android_v2_html_external_popup</item>
-        <item name="playstore">hotmob_android_v2_html_playstore_popup</item>
-        <item name="dial">hotmob_android_v2_html_dial_popup</item>
-        <item name="sms">hotmob_android_v2_html_sms_popup</item>
-        <item name="email">hotmob_android_v2_html_email_popup</item>
-        <item name="video">hotmob_android_v2_html_video_popup</item>
-        <item name="youtube">hotmob_android_v2_html_youtube_popup</item>
-        <item name="internal">hotmob_android_v2_html_internal_popup</item>
+        <item name="inapp">hotmob_android_popup_inapp</item>
+        <item name="external">hotmob_android_popup_external</item>
+        <item name="playstore">hotmob_android_popup_playstore</item>
+        <item name="dial">hotmob_android_popup_dial</item>
+        <item name="sms">hotmob_android_popup_sms</item>
+        <item name="email">hotmob_android_popup_email</item>
+        <item name="video">hotmob_android_popup_video</item>
+        <item name="youtube">hotmob_android_popup_youtube</item>
+        <item name="internal">hotmob_android_popup_internal</item>
     </string-array>
 
     <string-array name="banner_html">
@@ -49,12 +49,12 @@
     </string-array>
 
     <string-array name="banner_html_adcodes">
-        <item name="celtra">hotmob_android_v2_celtra_banner</item>
-        <item name="celtra_maxi">hotmob_android_v2_celtra_banner_maxi</item>
-        <item name="celtra_resize">hotmob_android_v2_celtra_banner_resize</item>
-        <item name="sizmek">hotmob_android_v2_sizmek_banner</item>
-        <item name="dcm">hotmob_android_v2_dcm_banner</item>
-        <item name="dcm2video">hotmob_android_v2_dcm_video_banner</item>
+        <item name="celtra">hotmob_android_banner_celtra</item>
+        <item name="celtra_maxi">hotmob_android_banner_celtra_maxi</item>
+        <item name="celtra_resize">hotmob_android_banner_celtra_resize</item>
+        <item name="sizmek">hotmob_android_banner_sizmek</item>
+        <item name="dcm">hotmob_android_banner_dcm</item>
+        <item name="dcm2video">hotmob_android_banner_dcm_video</item>
     </string-array>
 
     <string-array name="video_click_actions">
@@ -70,27 +70,27 @@
     </string-array>
 
     <string-array name="video_banner_click_action_adcodes">
-        <item name="inapp">hotmob_android_v2_video_inapp_banner</item>
-        <item name="external">hotmob_android_v2_video_external_banner</item>
-        <item name="playstore">hotmob_android_v2_video_playstore_banner</item>
-        <item name="dial">hotmob_android_v2_video_dial_banner</item>
-        <item name="sms">hotmob_android_v2_video_sms_banner</item>
-        <item name="email">hotmob_android_v2_video_email_banner</item>
-        <item name="youtube">hotmob_android_v2_video_youtube_banner</item>
-        <item name="internal">hotmob_android_v2_video_internal_banner</item>
-        <item name="null">hotmob_android_v2_video_null_banner</item>
+        <item name="inapp">hotmob_android_videobanner_inapp</item>
+        <item name="external">hotmob_android_videobanner_external</item>
+        <item name="playstore">hotmob_android_videobanner_playstore</item>
+        <item name="dial">hotmob_android_videobanner_dial</item>
+        <item name="sms">hotmob_android_videobanner_sms</item>
+        <item name="email">hotmob_android_videobanner_email</item>
+        <item name="youtube">hotmob_android_videobanner_youtube</item>
+        <item name="internal">hotmob_android_videobanner_internal</item>
+        <item name="null">hotmob_android_videobanner_null</item>
     </string-array>
 
     <string-array name="video_interstitial_click_action_adcodes">
-        <item name="inapp">hotmob_android_v2_video_inapp_popup</item>
-        <item name="external">hotmob_android_v2_video_external_popup</item>
-        <item name="playstore">hotmob_android_v2_video_playstore_popup</item>
-        <item name="dial">hotmob_android_v2_video_dial_popup</item>
-        <item name="sms">hotmob_android_v2_video_sms_popup</item>
-        <item name="email">hotmob_android_v2_video_email_popup</item>
-        <item name="youtube">hotmob_android_v2_video_youtube_popup</item>
-        <item name="internal">hotmob_android_v2_video_internal_popup</item>
-        <item name="null">hotmob_android_v2_video_null_popup</item>
+        <item name="inapp">hotmob_android_videopopup_inapp</item>
+        <item name="external">hotmob_android_videopopup_external</item>
+        <item name="playstore">hotmob_android_videopopup_playstore</item>
+        <item name="dial">hotmob_android_videopopup_dial</item>
+        <item name="sms">hotmob_android_videopopup_sms</item>
+        <item name="email">hotmob_android_videopopup_email</item>
+        <item name="youtube">hotmob_android_videopopup_youtube</item>
+        <item name="internal">hotmob_android_videopopup_internal</item>
+        <item name="null">hotmob_android_videopopup_null</item>
     </string-array>
 
 </resources>

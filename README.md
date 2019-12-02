@@ -5,7 +5,7 @@ Visit http://www.hot-mob.com/ for more details.
 ## SDK v5
 The latest version of Hotmob Android SDK, includes a bunch of bug fixes, performance improvements and error handling.
 
-Hotmob SDK v5 is backward Compatible with SDK v4. Old implementation using **HotmobManager** and **HotmobHandler** is still usable.
+Starting from v5.1.0, SDK APIs are changed and no longer support the usage of **HotmobManager** and **HotmobHandler**. Please follow the new integration guide to update SDK.
 
 ### Compatibility
 * Minimum Android SDK: API level 15
