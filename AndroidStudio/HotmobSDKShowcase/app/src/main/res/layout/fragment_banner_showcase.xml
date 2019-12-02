@@ -16,9 +16,10 @@
                 android:id="@+id/customAdCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Type your ad code here."
                 android:imeOptions="actionDone"
                 android:singleLine="true"
-                android:hint="Type your ad code here." />
+                app:layout_constraintTop_toTopOf="parent" />
 
         <HorizontalScrollView
                 android:id="@+id/clickActionsContainer"
