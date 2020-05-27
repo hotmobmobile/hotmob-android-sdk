@@ -12,6 +12,6 @@ class MainApplication : Application() {
 
         HotmobSettingsManager.debug = true
         // set Preload Interstitial
-        HotmobReloadManager.instance.setPreloadInterstitial("Interpage", "hotmob_android_google_ad")
+        HotmobReloadManager.instance.setPreloadInterstitial("Interpage", "hotmob_android_popup_external")
     }
 }
