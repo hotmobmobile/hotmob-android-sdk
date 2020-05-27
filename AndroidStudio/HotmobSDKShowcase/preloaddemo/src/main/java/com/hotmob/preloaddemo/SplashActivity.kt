@@ -11,18 +11,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
-import com.hotmob.sdk.ad.HotmobAdDeepLinkListener
-import com.hotmob.sdk.ad.HotmobAdEvent
-import com.hotmob.sdk.ad.HotmobAdListener
-import com.hotmob.sdk.ad.HotmobInterstitial
+import com.hotmob.sdk.ad.*
 import com.hotmob.sdk.module.reload.HotmobReloadManager
 
 class SplashActivity : AppCompatActivity(), HotmobAdListener, HotmobAdDeepLinkListener,
     LifecycleObserver {
 
     private val interstitial = HotmobInterstitial("LaunchApp", "hotmob_android_google_ad", false)
-    private var interstitialLoadingComplete = false
-    private var interstitialNoAd = false
     private var selfLoadingComplete = false
     private var interstitialDeepLink = ""
     private var goToMainAfterResume = false
@@ -41,7 +36,7 @@ class SplashActivity : AppCompatActivity(), HotmobAdListener, HotmobAdDeepLinkLi
         if (goToMainAfterResume) {
             // For case of Interstitial already show before
             changeToMainPage()
-        } else if (!interstitialLoadingComplete) {
+        } else if (interstitial.adState == HotmobAdState.INIT) {
             // Preload ad
             interstitial.loadAd(this)
 
@@ -59,11 +54,11 @@ class SplashActivity : AppCompatActivity(), HotmobAdListener, HotmobAdDeepLinkLi
     }
 
     private fun shouldShowInterstitial() {
-        Log.d("Splash", "shouldShowInterstitial $interstitialLoadingComplete & $selfLoadingComplete")
+        Log.d("Splash", "shouldShowInterstitial $selfLoadingComplete")
         // Determine showing Ad or switching page
-        if (interstitialLoadingComplete && selfLoadingComplete) {
+        if (interstitial.adState == HotmobAdState.LOADED && selfLoadingComplete) {
             interstitial.showAd(this)
-        } else if (interstitialNoAd && selfLoadingComplete) {
+        } else if (interstitial.adState == HotmobAdState.NO_AD && selfLoadingComplete) {
             changeToMainPage()
         }
     }
@@ -80,11 +75,9 @@ class SplashActivity : AppCompatActivity(), HotmobAdListener, HotmobAdDeepLinkLi
         Log.d("Splash", "on event $adEvent")
         when (adEvent) {
             HotmobAdEvent.LOADED -> {
-                interstitialLoadingComplete = true
                 shouldShowInterstitial()
             }
             HotmobAdEvent.NO_AD -> {
-                interstitialNoAd = true
                 shouldShowInterstitial()
             }
             HotmobAdEvent.HIDE -> {

@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -35,7 +36,7 @@ class MainFragment : Fragment() {
         if (itemId != currentItemId) {
             currentItemId = itemId
             context?.run {
-                HotmobReloadManager.instance.showPreloadInterstitial(this, "Interpage") { event ->
+                HotmobReloadManager.instance.showPreloadInterstitial(this, "Interpage") { event, deeplink ->
                     Log.d("Main", "showPreloadInterstitial status $event")
                     when (event) {
                         ShowPreloadedAdEvent.SHOW -> {
@@ -49,6 +50,10 @@ class MainFragment : Fragment() {
                         ShowPreloadedAdEvent.HIDE -> {
                             // no ad or ad is closed, can change page now
                             changePageTo(itemId)
+                        }
+                        ShowPreloadedAdEvent.DEEP_LINK -> {
+                            Toast.makeText(this, "Deep link $deeplink Received", Toast.LENGTH_SHORT).show()
+                            viewPager.currentItem = 2
                         }
                     }
                 }
