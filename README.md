@@ -8,7 +8,7 @@ The latest version of Hotmob Android SDK, includes a bunch of bug fixes, perform
 Starting from v5.1.0, SDK APIs are changed and no longer support the usage of **HotmobManager** and **HotmobHandler**. Please follow the new integration guide to update SDK.
 
 ### Compatibility
-* Minimum Android SDK: API level 15
+* Minimum Android SDK: API level 16
 * Fully Tested Android SDK: API level 28
 
 ### Integration
