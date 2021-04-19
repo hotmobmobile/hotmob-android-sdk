@@ -2,7 +2,6 @@ package com.hotmob.sdk.hotmobsdkshowcase.banner
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,16 +13,19 @@ import com.hotmob.sdk.ad.HotmobAdEvent
 import com.hotmob.sdk.ad.HotmobAdListener
 import com.hotmob.sdk.hotmobsdkshowcase.MainActivity
 import com.hotmob.sdk.hotmobsdkshowcase.R
-import kotlinx.android.synthetic.main.fragment_banner_showcase.*
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentBannerShowcaseBinding
 
 class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickListener, HotmobAdListener, HotmobAdDeepLinkListener {
+    private var _binding: FragmentBannerShowcaseBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_banner_showcase, container, false)
+        _binding = FragmentBannerShowcaseBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +38,7 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             button.text = clickActionList[i]
             button.tag = clickActionAdCodeList[i]
             button.setOnClickListener(this)
-            clickActions.addView(button)
+            binding.clickActions.addView(button)
         }
 
         val htmlCreativeList = resources.getStringArray(R.array.banner_html)
@@ -46,46 +48,46 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             button.text = htmlCreativeList[i]
             button.tag = htmlCreativeAdCodeList[i]
             button.setOnClickListener(this)
-            htmlCreative.addView(button)
+            binding.htmlCreative.addView(button)
         }
 
-        customAdCode.setOnEditorActionListener { _, actionId, _ ->
+        binding.customAdCode.setOnEditorActionListener { _, actionId, _ ->
             val result = actionId and EditorInfo.IME_MASK_ACTION
             if (result == EditorInfo.IME_ACTION_DONE) {
-                val customCode = customAdCode.text.toString()
+                val customCode = binding.customAdCode.text.toString()
                 // 1. hide the Banner
-                banner.hide()
+                binding.banner.hide()
                 // 2. change ad code
-                banner.adCode = customCode
+                binding.banner.adCode = customCode
                 // 3. reload Banner
-                banner.loadAd()
+                binding.banner.loadAd()
             }
             false
         }
-        banner.listener = this
-        banner.deepLinkListener = this
+        binding.banner.listener = this
+        binding.banner.deepLinkListener = this
     }
 
     override fun onDestroyView() {
-        banner.destroy()
+        binding.banner.destroy()
         super.onDestroyView()
     }
 
     override fun onClick(v: View?) {
-        banner.hide()
-        currentAdCode.text = v!!.tag.toString()
-        banner.adCode = currentAdCode.text.toString()
-        banner.loadAd()
+        binding.banner.hide()
+        binding.currentAdCode.text = v!!.tag.toString()
+        binding.banner.adCode = binding.currentAdCode.text.toString()
+        binding.banner.loadAd()
     }
 
     @SuppressLint("SetTextI18n")
     override fun onAdEvent(adEvent: HotmobAdEvent) {
         when (adEvent) {
-            HotmobAdEvent.START_LOADING -> bannerStatus.text = "Start Loading"
-            HotmobAdEvent.LOADED -> bannerStatus.text = "Loaded"
-            HotmobAdEvent.NO_AD -> bannerStatus.text = "No ad returned"
-            HotmobAdEvent.SHOW -> bannerStatus.text = "Showing"
-            HotmobAdEvent.HIDE -> bannerStatus.text = "Hidden"
+            HotmobAdEvent.START_LOADING -> binding.bannerStatus.text = "Start Loading"
+            HotmobAdEvent.LOADED -> binding.bannerStatus.text = "Loaded"
+            HotmobAdEvent.NO_AD -> binding.bannerStatus.text = "No ad returned"
+            HotmobAdEvent.SHOW -> binding.bannerStatus.text = "Showing"
+            HotmobAdEvent.HIDE -> binding.bannerStatus.text = "Hidden"
             HotmobAdEvent.RESIZE -> Toast.makeText(context, "Banner resized", Toast.LENGTH_SHORT).show()
             HotmobAdEvent.VIDEO_MUTE -> Toast.makeText(context, "Ad video mute", Toast.LENGTH_SHORT).show()
             HotmobAdEvent.VIDEO_UNMUTE -> Toast.makeText(context, "Ad video unmute", Toast.LENGTH_SHORT).show()

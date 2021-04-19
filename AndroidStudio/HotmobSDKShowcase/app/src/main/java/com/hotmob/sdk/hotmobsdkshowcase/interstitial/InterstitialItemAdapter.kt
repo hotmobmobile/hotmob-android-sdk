@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.hotmob.sdk.hotmobsdkshowcase.R
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentInterstitialitemBinding
 import com.hotmob.sdk.hotmobsdkshowcase.interstitial.InterstitialItemAdapter.ItemClickListener
-import kotlinx.android.synthetic.main.fragment_interstitialitem.view.*
 
 /**
  * [RecyclerView.Adapter] that can display a [InterstitialItem] and makes a call to the
@@ -49,8 +49,9 @@ class InterstitialItemAdapter(
     override fun getItemCount(): Int = values.size
 
     inner class ViewHolder(val view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
-        val name: TextView = view.itemName
-        val adCode: TextView = view.adCode
+        private val binding = FragmentInterstitialitemBinding.bind(view)
+        val name: TextView = binding.itemName
+        val adCode: TextView = binding.adCode
 
         override fun toString(): String {
             return super.toString() + " '" + name.text + "'"

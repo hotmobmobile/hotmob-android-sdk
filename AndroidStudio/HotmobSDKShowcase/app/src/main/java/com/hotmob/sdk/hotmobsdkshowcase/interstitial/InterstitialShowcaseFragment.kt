@@ -1,8 +1,6 @@
 package com.hotmob.sdk.hotmobsdkshowcase.interstitial
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +13,7 @@ import com.hotmob.sdk.ad.HotmobAdListener
 import com.hotmob.sdk.ad.HotmobInterstitial
 import com.hotmob.sdk.hotmobsdkshowcase.MainActivity
 import com.hotmob.sdk.hotmobsdkshowcase.R
-import kotlinx.android.synthetic.main.fragment_interstitialitem_list.*
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentInterstitialitemListBinding
 
 /**
  * A fragment representing a list of Items.
@@ -26,23 +24,25 @@ class InterstitialShowcaseFragment : androidx.fragment.app.Fragment(),
     HotmobAdDeepLinkListener {
 
     private val interstitial = HotmobInterstitial("ShowcaseInterstitial", "")
+    private var _binding: FragmentInterstitialitemListBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_interstitialitem_list, container, false)
+        _binding = FragmentInterstitialitemListBinding.inflate(inflater, container, false)
         interstitial.listener = this
         interstitial.deepLinkListener = this
 
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // Set the adapter
-        with(list) {
+        with(binding.list) {
             layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
 
             val interstitialArray = mutableListOf<InterstitialItem>()
@@ -63,10 +63,10 @@ class InterstitialShowcaseFragment : androidx.fragment.app.Fragment(),
             )
         }
 
-        customAdCode.setOnEditorActionListener { _, actionId, _ ->
+        binding.customAdCode.setOnEditorActionListener { _, actionId, _ ->
             val result = actionId and EditorInfo.IME_MASK_ACTION
             if (result == EditorInfo.IME_ACTION_DONE) {
-                val customCode = customAdCode.text.toString()
+                val customCode = binding.customAdCode.text.toString()
                 // 1. hide the Banner
                 onItemClick(InterstitialItem("Custom", customCode))
             }

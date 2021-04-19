@@ -10,9 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.hotmob.preloaddemo.databinding.FragmentMainBinding
 import com.hotmob.sdk.module.reload.HotmobReloadManager
 import com.hotmob.sdk.module.reload.ShowPreloadedAdEvent
-import kotlinx.android.synthetic.main.fragment_main.*
 
 
 /**
@@ -20,6 +20,8 @@ import kotlinx.android.synthetic.main.fragment_main.*
  *
  */
 class MainFragment : Fragment() {
+    private var _binding: FragmentMainBinding? = null
+    private val binding get() = _binding!!
 
     private var currentItemId: Int = R.id.navigation_home   // for keep tracking current page
 
@@ -53,7 +55,7 @@ class MainFragment : Fragment() {
                         }
                         ShowPreloadedAdEvent.DEEP_LINK -> {
                             Toast.makeText(this, "Deep link $deeplink Received", Toast.LENGTH_SHORT).show()
-                            viewPager.currentItem = 2
+                            binding.viewPager.currentItem = 2
                         }
                     }
                 }
@@ -65,13 +67,13 @@ class MainFragment : Fragment() {
         Log.d("Main", "changePageTo itemId $itemId")
         when (itemId) {
             R.id.navigation_home -> {
-                viewPager.currentItem = 0
+                binding.viewPager.currentItem = 0
             }
             R.id.navigation_dashboard -> {
-                viewPager.currentItem = 1
+                binding.viewPager.currentItem = 1
             }
             R.id.navigation_notifications -> {
-                viewPager.currentItem = 2
+                binding.viewPager.currentItem = 2
             }
         }
     }
@@ -81,15 +83,16 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        binding.navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        viewPager.adapter = MainPagerAdapter(childFragmentManager)
-        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        binding.viewPager.adapter = MainPagerAdapter(childFragmentManager)
+        binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageSelected(p0: Int) {
                 // Special code here to avoid showing ad when swiping page
                 // set currentItemId before changing navigation so showInterstitialBeforeChangePage()
@@ -97,15 +100,15 @@ class MainFragment : Fragment() {
                 when (p0) {
                     1 -> {
                         currentItemId = R.id.navigation_dashboard
-                        navigation.selectedItemId = R.id.navigation_dashboard
+                        binding.navigation.selectedItemId = R.id.navigation_dashboard
                     }
                     2 -> {
                         currentItemId = R.id.navigation_notifications
-                        navigation.selectedItemId = R.id.navigation_notifications
+                        binding.navigation.selectedItemId = R.id.navigation_notifications
                     }
                     else -> {
                         currentItemId = R.id.navigation_home
-                        navigation.selectedItemId = R.id.navigation_home
+                        binding.navigation.selectedItemId = R.id.navigation_home
                     }
                 }
             }

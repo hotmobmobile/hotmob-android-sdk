@@ -1,8 +1,6 @@
 package com.hotmob.sdk.hotmobsdkshowcase.videointerstitial
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,14 +9,16 @@ import com.hotmob.sdk.ad.HotmobAdDeepLinkListener
 import com.hotmob.sdk.ad.HotmobInterstitial
 import com.hotmob.sdk.hotmobsdkshowcase.MainActivity
 import com.hotmob.sdk.hotmobsdkshowcase.R
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentInterstitialitemListBinding
 import com.hotmob.sdk.hotmobsdkshowcase.interstitial.InterstitialItem
 import com.hotmob.sdk.hotmobsdkshowcase.interstitial.InterstitialItemAdapter
-import kotlinx.android.synthetic.main.fragment_interstitialitem_list.*
 
 /**
  * A fragment representing a list of Items.
  */
 class VideoInterstitialShowcaseFragment : androidx.fragment.app.Fragment(), InterstitialItemAdapter.ItemClickListener, HotmobAdDeepLinkListener {
+    private var _binding: FragmentInterstitialitemListBinding? = null
+    private val binding get() = _binding!!
 
     private val interstitial = HotmobInterstitial("ShowcaseInterstitial", "")
 
@@ -26,18 +26,18 @@ class VideoInterstitialShowcaseFragment : androidx.fragment.app.Fragment(), Inte
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_interstitialitem_list, container, false)
+        _binding = FragmentInterstitialitemListBinding.inflate(inflater, container, false)
         interstitial.deepLinkListener = this
 
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        customAdCode.visibility = View.GONE
+        binding.customAdCode.visibility = View.GONE
 
         // Set the adapter
-        with(list) {
+        with(binding.list) {
             layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
 
             val interstitialArray = mutableListOf<InterstitialItem>()

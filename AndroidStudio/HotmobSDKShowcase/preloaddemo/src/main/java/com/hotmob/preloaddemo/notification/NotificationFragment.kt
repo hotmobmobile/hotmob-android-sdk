@@ -24,10 +24,5 @@ class NotificationFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_notification, container, false)
     }
 
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        Log.d("xxxxxx", "Notification - setUserVisibleHint($isVisibleToUser)")
-    }
-
 
 }
