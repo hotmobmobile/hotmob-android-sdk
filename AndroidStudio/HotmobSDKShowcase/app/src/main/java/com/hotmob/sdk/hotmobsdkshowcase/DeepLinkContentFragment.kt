@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_deep_link_content.*
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentDeepLinkContentBinding
 
 private const val ARG_PARAM1 = "param1"
 
@@ -18,6 +18,8 @@ private const val ARG_PARAM1 = "param1"
  */
 class DeepLinkContentFragment : androidx.fragment.app.Fragment() {
     private var param1: String? = null
+    private var _binding: FragmentDeepLinkContentBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +32,14 @@ class DeepLinkContentFragment : androidx.fragment.app.Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_deep_link_content, container, false)
+        _binding = FragmentDeepLinkContentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        deepLinkAddress.text = param1
+        binding.deepLinkAddress.text = param1
     }
 
     companion object {

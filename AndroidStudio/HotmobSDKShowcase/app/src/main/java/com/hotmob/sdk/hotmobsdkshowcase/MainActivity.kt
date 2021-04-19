@@ -3,36 +3,37 @@ package com.hotmob.sdk.hotmobsdkshowcase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
-import androidx.fragment.app.Fragment
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
-import android.view.Menu
 import android.view.MenuItem
 import com.hotmob.sdk.hotmobsdkshowcase.banner.BannerShowcaseFragment
 import com.hotmob.sdk.hotmobsdkshowcase.banner.listview.BannerInListViewFragment
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.BannerInRecycleViewFragment
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.ActivityMainBinding
 import com.hotmob.sdk.hotmobsdkshowcase.datacollection.DataCollectionFragment
 import com.hotmob.sdk.hotmobsdkshowcase.interstitial.InterstitialShowcaseFragment
 import com.hotmob.sdk.hotmobsdkshowcase.videobanner.VideoBannerShowcaseFragment
 import com.hotmob.sdk.hotmobsdkshowcase.videointerstitial.VideoInterstitialShowcaseFragment
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity(),
     NavigationView.OnNavigationItemSelectedListener {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+        setSupportActionBar(binding.appBar.toolbar)
 
         val toggle = ActionBarDrawerToggle(
-            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this, binding.drawerLayout, binding.appBar.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
-        drawer_layout.addDrawerListener(toggle)
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        nav_view.setNavigationItemSelectedListener(this)
+        binding.navView.setNavigationItemSelectedListener(this)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.content, BannerShowcaseFragment())
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity(),
             .replace(R.id.content, targetPage)
             .commit()
 
-        drawer_layout.closeDrawer(GravityCompat.START)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 

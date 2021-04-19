@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.hotmob.sdk.module.datacollection.HotmobDataCollection
 
-import com.hotmob.sdk.hotmobsdkshowcase.R
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentDataCollectionBinding
 import com.hotmob.sdk.module.reload.HotmobReloadManager
-import kotlinx.android.synthetic.main.fragment_data_collection.*
 import java.util.HashMap
 
 /**
@@ -18,19 +17,22 @@ import java.util.HashMap
  *
  */
 class DataCollectionFragment : androidx.fragment.app.Fragment() {
+    private var _binding: FragmentDataCollectionBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_data_collection, container, false)
+        _binding = FragmentDataCollectionBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        sendEventButton.setOnClickListener {
+        binding.sendEventButton.setOnClickListener {
             val dataMap = HashMap<String, Any>()
             dataMap["param1"] = "ABC"
             dataMap["param2"] = "EFG"

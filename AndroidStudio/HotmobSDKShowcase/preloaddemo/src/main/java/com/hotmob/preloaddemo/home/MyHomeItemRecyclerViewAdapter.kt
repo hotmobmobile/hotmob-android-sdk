@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hotmob.sdk.ad.HotmobBanner
 import com.hotmob.sdk.helper.HotmobAdViewHolder
 import com.hotmob.preloaddemo.R
+import com.hotmob.preloaddemo.databinding.FragmentHomeitemBinding
 
 
 import com.hotmob.preloaddemo.home.HomeFragment.OnListFragmentInteractionListener
 import com.hotmob.preloaddemo.home.dummy.DummyItem
 
-import kotlinx.android.synthetic.main.fragment_homeitem.view.*
 
 /**
  * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
@@ -92,8 +92,9 @@ class MyHomeItemRecyclerViewAdapter(
     override fun getItemCount(): Int = values.size + adMap.size
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val mIdView: TextView = mView.item_number
-        val mContentView: TextView = mView.content
+        val binding = FragmentHomeitemBinding.bind(mView)
+        val mIdView: TextView = binding.itemNumber
+        val mContentView: TextView = binding.content
 
         override fun toString(): String {
             return super.toString() + " '" + mContentView.text + "'"

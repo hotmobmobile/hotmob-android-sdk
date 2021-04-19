@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import com.hotmob.sdk.ad.HotmobBanner
 import com.hotmob.sdk.hotmobsdkshowcase.R
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.dummy.DummyItem
-import kotlinx.android.synthetic.main.listitem_dummyitem.view.*
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.ListitemDummyitemBinding
 
 class ListItemListViewAdapter (
     context: Context,
@@ -36,8 +36,9 @@ class ListItemListViewAdapter (
             adMap[position]?.bindToView(view as ViewGroup)
         } else {
             val item = getItem(position)
-            view!!.item_number.text = item!!.id
-            view.content.text = item.content
+            val binding = ListitemDummyitemBinding.bind(view!!)
+            binding.itemNumber.text = item!!.id
+            binding.content.text = item.content
         }
         return view!!
     }

@@ -7,7 +7,7 @@ import com.hotmob.preloaddemo.dashboard.DashboardFragment
 import com.hotmob.preloaddemo.home.HomeFragment
 import com.hotmob.preloaddemo.notification.NotificationFragment
 
-class MainPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+class MainPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     override fun getItem(p0: Int): Fragment {
         return when (p0) {
             1 -> DashboardFragment()

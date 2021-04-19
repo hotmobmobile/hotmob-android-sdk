@@ -11,8 +11,7 @@ import com.hotmob.sdk.hotmobsdkshowcase.R
 
 
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.dummy.DummyItem
-
-import kotlinx.android.synthetic.main.listitem_dummyitem.view.*
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.ListitemDummyitemBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [DummyItem]
@@ -81,8 +80,9 @@ class ListItemRecyclerViewAdapter(
     override fun getItemCount(): Int = values.size + adMap.size
 
     inner class ViewHolder(val view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
-        val idView: TextView = view.item_number
-        val contentView: TextView = view.content
+        private val binding = ListitemDummyitemBinding.bind(view)
+        val idView: TextView = binding.itemNumber
+        val contentView: TextView = binding.content
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"

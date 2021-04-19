@@ -14,7 +14,7 @@ import com.hotmob.sdk.ad.HotmobAdEvent
 import com.hotmob.sdk.ad.HotmobAdListener
 import com.hotmob.sdk.hotmobsdkshowcase.MainActivity
 import com.hotmob.sdk.hotmobsdkshowcase.R
-import kotlinx.android.synthetic.main.fragment_video_banner_showcase.*
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentVideoBannerShowcaseBinding
 
 
 /**
@@ -22,13 +22,16 @@ import kotlinx.android.synthetic.main.fragment_video_banner_showcase.*
  *
  */
 class VideoBannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickListener, HotmobAdListener, HotmobAdDeepLinkListener {
+    private var _binding: FragmentVideoBannerShowcaseBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_video_banner_showcase, container, false)
+        _binding = FragmentVideoBannerShowcaseBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,41 +44,41 @@ class VideoBannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnCli
             button.text = clickActionList[i]
             button.tag = clickActionAdCodeList[i]
             button.setOnClickListener(this)
-            clickActions.addView(button)
+            binding.clickActions.addView(button)
         }
 
-        showFloatingObstacle.setOnClickListener {
-            floatingObstacle.visibility = View.VISIBLE
+        binding.showFloatingObstacle.setOnClickListener {
+            binding.floatingObstacle.visibility = View.VISIBLE
         }
-        floatingObstacle.setOnClickListener {
-            floatingObstacle.visibility = View.GONE
+        binding.floatingObstacle.setOnClickListener {
+            binding.floatingObstacle.visibility = View.GONE
         }
 
-        banner.obstacleViews.add(floatingObstacle)
-        banner.listener = this
-        banner.deepLinkListener = this
+        binding.banner.obstacleViews.add(binding.floatingObstacle)
+        binding.banner.listener = this
+        binding.banner.deepLinkListener = this
     }
 
     override fun onDestroyView() {
-        banner.destroy()
+        binding.banner.destroy()
         super.onDestroyView()
     }
 
     override fun onClick(v: View?) {
-        banner.hide()
-        currentAdCode.text = v!!.tag.toString()
-        banner.adCode = currentAdCode.text.toString()
-        banner.loadAd()
+        binding.banner.hide()
+        binding.currentAdCode.text = v!!.tag.toString()
+        binding.banner.adCode = binding.currentAdCode.text.toString()
+        binding.banner.loadAd()
     }
 
     @SuppressLint("SetTextI18n")
     override fun onAdEvent(adEvent: HotmobAdEvent) {
         when (adEvent) {
-            HotmobAdEvent.START_LOADING -> bannerStatus.text = "Start Loading"
-            HotmobAdEvent.LOADED -> bannerStatus.text = "Loaded"
-            HotmobAdEvent.NO_AD -> bannerStatus.text = "No ad returned"
-            HotmobAdEvent.SHOW -> bannerStatus.text = "Showing"
-            HotmobAdEvent.HIDE -> bannerStatus.text = "Hidden"
+            HotmobAdEvent.START_LOADING -> binding.bannerStatus.text = "Start Loading"
+            HotmobAdEvent.LOADED -> binding.bannerStatus.text = "Loaded"
+            HotmobAdEvent.NO_AD -> binding.bannerStatus.text = "No ad returned"
+            HotmobAdEvent.SHOW -> binding.bannerStatus.text = "Showing"
+            HotmobAdEvent.HIDE -> binding.bannerStatus.text = "Hidden"
             HotmobAdEvent.RESIZE -> Toast.makeText(context, "Banner resized", Toast.LENGTH_SHORT).show()
             else -> return
         }
