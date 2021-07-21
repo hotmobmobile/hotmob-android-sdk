@@ -28,6 +28,7 @@ Starting from v5.1.0, SDK APIs are changed and no longer support the usage of **
   * [Interpage Ad](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Interpage-Ad)
 * [Data Collection](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Data-Collection-v5)
 * [Location Collection](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Location-Collection-v5)
+* [VAST URL](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/VAST-URL)
 * [Support Google Ad](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Support-Google-Ad)
 * [Migrate from v4 to v5](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Migrate-from-v4-to-v5)
 * [Debugging](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Debugging-v5)
