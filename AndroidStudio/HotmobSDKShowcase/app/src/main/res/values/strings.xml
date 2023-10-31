@@ -27,6 +27,40 @@
         <item name="internal">hotmob_android_banner_internal</item>
     </string-array>
 
+    <string-array name="floating_banner">
+        <item name="standard">Standard Banner</item>
+        <item name="maxi">Maxi Banner</item>
+        <item name="lrec">LREC Banner</item>
+        <item name="standard_original">Standard Original</item>
+        <item name="maxi_original">Maxi Original</item>
+        <item name="lrec_original">LREC Original</item>
+        <item name="inapp">Action In App</item>
+        <item name="external">Action External</item>
+        <item name="floating">Floating HTML</item>
+        <item name="expandable">Expandable HTML</item>
+        <item name="google">Google in Hotmob</item>
+        <item name="video_inapp">Video Banner Inapp</item>
+        <item name="video_external">Video Banner External</item>
+        <item name="no_ad">No Ad</item>
+    </string-array>
+
+    <string-array name="floating_banner_adcode">
+        <item name="standard">hotmob_android_banner_standard</item>
+        <item name="maxi">hotmob_android_banner_maxi</item>
+        <item name="lrec">hotmob_android_banner_lrec</item>
+        <item name="standard_original">hotmob_android_banner_standard_original</item>
+        <item name="maxi_original">hotmob_android_banner_maxi_original</item>
+        <item name="lrec_original">hotmob_android_banner_lrec_original</item>
+        <item name="inapp">hotmob_android_banner_inapp</item>
+        <item name="external">hotmob_android_banner_external</item>
+        <item name="floating">hotmob_android_floating</item>
+        <item name="expandable">hotmob_android_expand</item>
+        <item name="google" >hotmob_android_google_banner</item>
+        <item name="video_inapp">hotmob_android_videobanner_inapp</item>
+        <item name="video_external">hotmob_android_videobanner_external</item>
+        <item name="no_ad">no_ad</item>
+    </string-array>
+
     <string-array name="interstitial_click_action_adcodes">
         <item name="inapp">hotmob_android_popup_inapp</item>
         <item name="external">hotmob_android_popup_external</item>

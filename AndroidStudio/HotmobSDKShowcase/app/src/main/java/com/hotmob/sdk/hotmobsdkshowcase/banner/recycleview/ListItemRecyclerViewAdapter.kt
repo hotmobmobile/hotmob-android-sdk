@@ -1,15 +1,14 @@
 package com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview
 
-import androidx.recyclerview.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.hotmob.sdk.ad.HotmobBanner
 import com.hotmob.sdk.helper.HotmobAdViewHolder
 import com.hotmob.sdk.hotmobsdkshowcase.R
-
-
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.dummy.DummyItem
 import com.hotmob.sdk.hotmobsdkshowcase.databinding.ListitemDummyitemBinding
 
