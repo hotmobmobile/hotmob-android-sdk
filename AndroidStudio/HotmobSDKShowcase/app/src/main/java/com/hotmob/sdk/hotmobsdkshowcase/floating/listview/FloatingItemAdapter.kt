@@ -1,31 +1,26 @@
-package com.hotmob.sdk.hotmobsdkshowcase.interstitial
+package com.hotmob.sdk.hotmobsdkshowcase.floating.listview
 
 
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.hotmob.sdk.hotmobsdkshowcase.R
-import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentInterstitialitemBinding
-import com.hotmob.sdk.hotmobsdkshowcase.interstitial.InterstitialItemAdapter.ItemClickListener
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentFloatingitemBinding
 
 /**
- * [RecyclerView.Adapter] that can display a [InterstitialItem] and makes a call to the
+ * [RecyclerView.Adapter] that can display a [FloatingItem] and makes a call to the
  * specified [ItemClickListener].
  */
-class InterstitialItemAdapter(
-    private val values: List<InterstitialItem>,
+class FloatingItemAdapter(
+    private val values: List<FloatingItem>,
     private val listener: ItemClickListener
-) : androidx.recyclerview.widget.RecyclerView.Adapter<InterstitialItemAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<FloatingItemAdapter.ViewHolder>() {
 
-    private val onClickListener: View.OnClickListener
-
-    init {
-        onClickListener = View.OnClickListener { v ->
-            val item = v.tag as InterstitialItem
-            listener.onItemClick(item)
-        }
+    private val onClickListener: View.OnClickListener = View.OnClickListener { v ->
+        val item = v.tag as FloatingItem
+        listener.onItemClick(item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -48,8 +43,8 @@ class InterstitialItemAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(val view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
-        private val binding = FragmentInterstitialitemBinding.bind(view)
+    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+        private val binding = FragmentFloatingitemBinding.bind(view)
         val name: TextView = binding.itemName
         val adCode: TextView = binding.adCode
 
@@ -59,6 +54,6 @@ class InterstitialItemAdapter(
     }
 
     interface ItemClickListener {
-        fun onItemClick(interstitialItem: InterstitialItem)
+        fun onItemClick(floatingItem: FloatingItem)
     }
 }

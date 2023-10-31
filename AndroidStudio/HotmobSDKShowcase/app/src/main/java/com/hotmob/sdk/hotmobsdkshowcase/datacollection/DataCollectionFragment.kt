@@ -2,15 +2,13 @@ package com.hotmob.sdk.hotmobsdkshowcase.datacollection
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hotmob.sdk.module.datacollection.HotmobDataCollection
-
+import androidx.fragment.app.Fragment
 import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentDataCollectionBinding
+import com.hotmob.sdk.module.datacollection.HotmobDataCollection
 import com.hotmob.sdk.module.reload.HotmobReloadManager
-import java.util.HashMap
 
 /**
  * A simple [Fragment] subclass.
@@ -38,7 +36,7 @@ class DataCollectionFragment : androidx.fragment.app.Fragment() {
             dataMap["param2"] = "EFG"
             dataMap["param3"] = "123"
             HotmobDataCollection.captureEvent(
-                context!!,
+                requireContext(),
                 "test_user_click",
                 dataMap
             )
@@ -50,7 +48,7 @@ class DataCollectionFragment : androidx.fragment.app.Fragment() {
         super.onStart()
 
         HotmobDataCollection.captureEvent(
-            context!!,
+            requireContext(),
             "test_user_action",
             "enter_page"
         )

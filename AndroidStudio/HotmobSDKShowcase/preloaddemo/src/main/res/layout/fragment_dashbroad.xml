@@ -80,4 +80,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5"/>
 
+<!--    <com.hotmob.sdk.ad.HotmobFloating-->
+<!--        android:id="@+id/floatingBanner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:adcode="hotmob_android_banner_standard"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:parentHeight="match_parent"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

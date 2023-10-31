@@ -47,6 +47,19 @@
         </menu>
     </item>
 
+    <item android:title="Floating Banner">
+        <menu>
+            <item
+                android:id="@+id/nav_floating_showcase"
+                android:icon="@android:drawable/ic_menu_gallery"
+                android:title="Showcase"/>
+            <item
+                android:id="@+id/nav_floating_list"
+                android:icon="@android:drawable/ic_menu_gallery"
+                android:title="List"/>
+        </menu>
+    </item>
+
     <item android:title="Data Collection">
         <menu>
             <item

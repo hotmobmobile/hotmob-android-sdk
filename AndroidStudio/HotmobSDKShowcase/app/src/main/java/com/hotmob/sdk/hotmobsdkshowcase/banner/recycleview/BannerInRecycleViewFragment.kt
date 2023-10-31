@@ -1,19 +1,12 @@
 package com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hotmob.sdk.ad.HotmobBanner
 import com.hotmob.sdk.hotmobsdkshowcase.R
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.dummy.DummyItem
-import java.util.ArrayList
-import kotlin.collections.HashMap
-import kotlin.collections.forEach
 import kotlin.collections.set
 
 /**

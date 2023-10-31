@@ -1,16 +1,18 @@
 package com.hotmob.sdk.hotmobsdkshowcase
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.navigation.NavigationView
-import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import com.hotmob.sdk.hotmobsdkshowcase.banner.BannerShowcaseFragment
 import com.hotmob.sdk.hotmobsdkshowcase.banner.listview.BannerInListViewFragment
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.BannerInRecycleViewFragment
 import com.hotmob.sdk.hotmobsdkshowcase.databinding.ActivityMainBinding
 import com.hotmob.sdk.hotmobsdkshowcase.datacollection.DataCollectionFragment
+import com.hotmob.sdk.hotmobsdkshowcase.floating.FloatingBannerShowcaseFragment
+import com.hotmob.sdk.hotmobsdkshowcase.floating.listview.FloatingListViewFragment
 import com.hotmob.sdk.hotmobsdkshowcase.interstitial.InterstitialShowcaseFragment
 import com.hotmob.sdk.hotmobsdkshowcase.videobanner.VideoBannerShowcaseFragment
 import com.hotmob.sdk.hotmobsdkshowcase.videointerstitial.VideoInterstitialShowcaseFragment
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity(),
             R.id.nav_video_banner_showcase -> VideoBannerShowcaseFragment()
             R.id.nav_interstitial_showcase -> InterstitialShowcaseFragment()
             R.id.nav_video_interstitial_showcase -> VideoInterstitialShowcaseFragment()
+            R.id.nav_floating_showcase -> FloatingBannerShowcaseFragment()
+            R.id.nav_floating_list -> FloatingListViewFragment()
             R.id.nav_data_collection -> DataCollectionFragment()
             else -> BannerShowcaseFragment()
         }
@@ -65,4 +69,5 @@ class MainActivity : AppCompatActivity(),
             .addToBackStack(null)
             .commit()
     }
+
 }

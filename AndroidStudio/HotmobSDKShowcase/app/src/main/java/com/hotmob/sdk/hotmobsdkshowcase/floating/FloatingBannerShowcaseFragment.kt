@@ -1,40 +1,78 @@
-package com.hotmob.sdk.hotmobsdkshowcase.banner
+package com.hotmob.sdk.hotmobsdkshowcase.floating
+
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.webkit.WebView
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.android.material.tabs.TabLayout
 import com.hotmob.sdk.ad.HotmobAdDeepLinkListener
 import com.hotmob.sdk.ad.HotmobAdEvent
 import com.hotmob.sdk.ad.HotmobAdListener
-import com.hotmob.sdk.ad.webview.AdWebView
+import com.hotmob.sdk.ad.HotmobFloating
 import com.hotmob.sdk.hotmobsdkshowcase.MainActivity
 import com.hotmob.sdk.hotmobsdkshowcase.R
-import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentBannerShowcaseBinding
+import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentFloatingShowcaseBinding
 
-class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickListener, HotmobAdListener, HotmobAdDeepLinkListener {
-    private var _binding: FragmentBannerShowcaseBinding? = null
+
+/**
+ * A simple [Fragment] subclass.
+ *
+ */
+class FloatingBannerShowcaseFragment : Fragment(), View.OnClickListener, HotmobAdListener, HotmobAdDeepLinkListener {
+    private var _binding: FragmentFloatingShowcaseBinding? = null
+    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
+
+    private var currentBanner = 0
+    private var floating: HotmobFloating? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentBannerShowcaseBinding.inflate(inflater, container, false)
-
+        _binding = FragmentFloatingShowcaseBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.bannerSizeTab.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(p0: TabLayout.Tab?) {
+                hideAllBanner()
+//                currentBanner = p0!!.position
+//                getCurrentBanner().visibility = View.VISIBLE
+//                getCurrentBanner().adCode = binding.currentAdCode.text.toString()
+//                getCurrentBanner().loadAd()
+                floating = context?.let { HotmobFloating(it) }
+                floating?.identifier = "Floating"
+                floating?.adCode = binding.currentAdCode.text.toString()
+//                floating?.layoutParams = ViewGroup.LayoutParams(
+//                    ViewGroup.LayoutParams.MATCH_PARENT,
+//                    ViewGroup.LayoutParams.MATCH_PARENT
+//                )
+
+                floating?.bindToView(view as ViewGroup)
+                floating?.loadAd()
+            }
+
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+            }
+
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+            }
+        })
 
         val clickActionList = resources.getStringArray(R.array.click_actions)
         val clickActionAdCodeList = resources.getStringArray(R.array.banner_click_action_adcodes)
@@ -61,29 +99,45 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             if (result == EditorInfo.IME_ACTION_DONE) {
                 val customCode = binding.customAdCode.text.toString()
                 // 1. hide the Banner
-                binding.banner.hide()
+                floating?.hide()
                 // 2. change ad code
-                binding.banner.adCode = customCode
+                floating?.adCode = customCode
                 // 3. reload Banner
-                binding.banner.loadAd()
+                floating?.loadAd()
             }
             false
         }
-        binding.banner.listener = this
-        binding.banner.deepLinkListener = this
+
+        floating?.listener = this
+        floating?.deepLinkListener = this
     }
 
     override fun onDestroyView() {
-        binding.banner.destroy()
+        floating?.destroy()
         super.onDestroyView()
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     override fun onClick(v: View?) {
-        binding.banner.hide()
+        floating?.hide()
         binding.currentAdCode.text = v!!.tag.toString()
-        binding.banner.adCode = binding.currentAdCode.text.toString()
-        binding.banner.loadAd()
+
+        val displayMetrics = DisplayMetrics()
+        (context as Activity?)?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
+        val height = displayMetrics.heightPixels
+        val width = displayMetrics.widthPixels
+
+        if(floating == null) {
+            floating = HotmobFloating(requireContext())
+            floating?.identifier = "Floating"
+            floating?.adCode = binding.currentAdCode.text.toString()
+            floating?.bindToView(binding.root as ViewGroup)
+            floating?.loadAd()
+//            floating?.layoutParams = FrameLayout.LayoutParams(width, height)
+        } else {
+            floating?.adCode = binding.currentAdCode.text.toString()
+            floating?.loadAd()
+        }
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -92,40 +146,13 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             HotmobAdEvent.START_LOADING -> binding.bannerStatus.text = "Start Loading"
             HotmobAdEvent.LOADED -> binding.bannerStatus.text = "Loaded"
             HotmobAdEvent.NO_AD -> binding.bannerStatus.text = "No ad returned"
-            HotmobAdEvent.SHOW -> {
-                binding.bannerStatus.text = "Showing"
-                val adWebView: AdWebView? = binding.banner?.findViewById(R.id.HTMLWebView)
-                adWebView?.setOnTouchListener(object : View.OnTouchListener {
-                    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                        println(event)
-                        if (event != null && event.action != MotionEvent.ACTION_UP) {
-                            binding.root?.requestDisallowInterceptTouchEvent(true)
-                        } else {
-                            (v as AdWebView)?.isClicked = true
-                        }
-                        return false
-                    }
-                })
-
-            }
+            HotmobAdEvent.SHOW -> binding.bannerStatus.text = "Showing"
             HotmobAdEvent.HIDE -> binding.bannerStatus.text = "Hidden"
-            HotmobAdEvent.RESIZE -> Toast.makeText(context, "Banner resized", Toast.LENGTH_SHORT).show()
+//            HotmobAdEvent.RESIZE -> Toast.makeText(context, "Banner resized", Toast.LENGTH_SHORT).show()
             HotmobAdEvent.VIDEO_MUTE -> Toast.makeText(context, "Ad video mute", Toast.LENGTH_SHORT).show()
             HotmobAdEvent.VIDEO_UNMUTE -> Toast.makeText(context, "Ad video unmute", Toast.LENGTH_SHORT).show()
             else -> return
         }
-    }
-
-    private fun showingCallback() {
-        binding.bannerStatus.text = "Showing"
-        println(binding.banner.childCount)
-        val adWebView: WebView = binding.banner.findViewById(R.id.HTMLWebView)
-        adWebView.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                binding.root.requestDisallowInterceptTouchEvent(true)
-                return false
-            }
-        })
     }
 
     override fun onDeepLink(deepLink: String) {
@@ -133,4 +160,11 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             (context as MainActivity).goToDeepPage(deepLink)
         }
     }
+
+    private fun hideAllBanner() {
+        floating?.adCode = ""
+        floating?.hide()
+
+    }
+
 }

@@ -2,10 +2,10 @@ package com.hotmob.sdk.hotmobsdkshowcase
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentDeepLinkContentBinding
 
 private const val ARG_PARAM1 = "param1"
