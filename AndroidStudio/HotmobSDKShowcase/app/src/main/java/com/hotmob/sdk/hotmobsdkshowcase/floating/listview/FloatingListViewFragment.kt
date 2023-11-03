@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.FrameLayout
+import android.widget.RelativeLayout
 import android.widget.Toast
 import com.hotmob.sdk.ad.HotmobAdDeepLinkListener
 import com.hotmob.sdk.ad.HotmobAdEvent
@@ -92,17 +93,17 @@ class FloatingListViewFragment : androidx.fragment.app.Fragment(),
 
         if(floating == null) {
             floating = HotmobFloating(requireContext())
-            val params = FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT
+            val params = RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.MATCH_PARENT
             )
-            params.gravity = Gravity.BOTTOM and Gravity.END
+            params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+            params.addRule(RelativeLayout.ALIGN_PARENT_END)
 
             floating?.layoutParams = params
             floating?.identifier = "Floating"
             floating?.adCode = floatingItem.adCode
-            val contentLayout = activity?.findViewById(R.id.content) as FrameLayout
-            floating?.bindToView(contentLayout as ViewGroup)
+            floating?.bindToView(this.view as ViewGroup)
         } else {
             floating?.adCode = floatingItem.adCode
             floating?.loadAd()

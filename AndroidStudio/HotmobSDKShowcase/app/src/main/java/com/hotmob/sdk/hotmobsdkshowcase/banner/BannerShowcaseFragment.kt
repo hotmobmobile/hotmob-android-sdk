@@ -13,7 +13,7 @@ import android.widget.Toast
 import com.hotmob.sdk.ad.HotmobAdDeepLinkListener
 import com.hotmob.sdk.ad.HotmobAdEvent
 import com.hotmob.sdk.ad.HotmobAdListener
-import com.hotmob.sdk.ad.webview.AdWebView
+import com.hotmob.sdk.ad.HotmobBanner
 import com.hotmob.sdk.hotmobsdkshowcase.MainActivity
 import com.hotmob.sdk.hotmobsdkshowcase.R
 import com.hotmob.sdk.hotmobsdkshowcase.databinding.FragmentBannerShowcaseBinding
@@ -94,14 +94,14 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             HotmobAdEvent.NO_AD -> binding.bannerStatus.text = "No ad returned"
             HotmobAdEvent.SHOW -> {
                 binding.bannerStatus.text = "Showing"
-                val adWebView: AdWebView? = binding.banner?.findViewById(R.id.HTMLWebView)
-                adWebView?.setOnTouchListener(object : View.OnTouchListener {
+//                val adWebView: AdWebView? = binding.banner?.findViewById(R.id.HTMLWebView)
+                binding.banner?.setOnTouchListener(object : View.OnTouchListener {
                     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                         println(event)
                         if (event != null && event.action != MotionEvent.ACTION_UP) {
                             binding.root?.requestDisallowInterceptTouchEvent(true)
                         } else {
-                            (v as AdWebView)?.isClicked = true
+                            (v as HotmobBanner)?.onClick()
                         }
                         return false
                     }
@@ -117,15 +117,7 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
     }
 
     private fun showingCallback() {
-        binding.bannerStatus.text = "Showing"
-        println(binding.banner.childCount)
-        val adWebView: WebView = binding.banner.findViewById(R.id.HTMLWebView)
-        adWebView.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                binding.root.requestDisallowInterceptTouchEvent(true)
-                return false
-            }
-        })
+
     }
 
     override fun onDeepLink(deepLink: String) {

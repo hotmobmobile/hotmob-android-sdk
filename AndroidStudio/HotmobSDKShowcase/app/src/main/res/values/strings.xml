@@ -127,4 +127,19 @@
         <item name="null">hotmob_android_videopopup_null</item>
     </string-array>
 
+    <string-array name="mediate_ad">
+        <item>Google in Hotmob</item>
+    </string-array>
+
+    <string-array name="mediate_ad_adcode">
+        <item>hotmob_android_google_banner</item>
+    </string-array>
+
+    <string-array name="mediate_interstitial">
+        <item>Google in Hotmob</item>
+    </string-array>
+
+    <string-array name="mediate_interstitial_adcode">
+        <item>hotmob_android_google_ad</item>
+    </string-array>
 </resources>

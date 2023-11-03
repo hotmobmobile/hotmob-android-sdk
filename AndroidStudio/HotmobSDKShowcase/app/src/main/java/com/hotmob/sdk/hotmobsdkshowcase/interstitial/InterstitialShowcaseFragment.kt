@@ -57,6 +57,16 @@ class InterstitialShowcaseFragment : androidx.fragment.app.Fragment(),
                     ))
             }
 
+            val mediateList = resources.getStringArray(R.array.mediate_interstitial)
+            val mediateAdCodeList = resources.getStringArray(R.array.mediate_interstitial_adcode)
+            for (i in mediateList.indices) {
+                interstitialArray.add(
+                    InterstitialItem(
+                        name = mediateList[i],
+                        adCode = mediateAdCodeList[i]
+                    ))
+            }
+
             adapter = InterstitialItemAdapter(
                 interstitialArray,
                 this@InterstitialShowcaseFragment
