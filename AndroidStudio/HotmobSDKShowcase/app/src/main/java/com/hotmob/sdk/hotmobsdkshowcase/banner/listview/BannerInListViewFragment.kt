@@ -7,7 +7,6 @@ import android.widget.ListView
 import com.hotmob.sdk.ad.HotmobAdEvent
 import com.hotmob.sdk.ad.HotmobAdListener
 import com.hotmob.sdk.ad.HotmobBanner
-import com.hotmob.sdk.ad.webview.AdWebView
 import com.hotmob.sdk.hotmobsdkshowcase.R
 import com.hotmob.sdk.hotmobsdkshowcase.banner.recycleview.dummy.DummyItem
 import kotlin.collections.set
@@ -19,7 +18,6 @@ class BannerInListViewFragment : androidx.fragment.app.Fragment(), HotmobAdListe
 
     private var listView: ListView? = null
     private var listAdapter: ListItemListViewAdapter? = null
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,8 +46,25 @@ class BannerInListViewFragment : androidx.fragment.app.Fragment(), HotmobAdListe
                 ad2.focusableAd = false
 
                 val ads = HashMap<Int, HotmobBanner>()
+
                 ads[5] = ad1
+                ad1.setOnTouchListener { v, event ->
+                    if (event != null && event.action != MotionEvent.ACTION_UP) {
+                        listView?.requestDisallowInterceptTouchEvent(true)
+                    } else {
+                        (v as HotmobBanner).onClick()
+                    }
+                    false
+                }
                 ads[15] = ad2
+                ad1.setOnTouchListener { v, event ->
+                    if (event != null && event.action != MotionEvent.ACTION_UP) {
+                        listView?.requestDisallowInterceptTouchEvent(true)
+                    } else {
+                        (v as HotmobBanner).performClick()
+                    }
+                    false
+                }
                 listAdapter = ListItemListViewAdapter(context, dummyItems, ads)
                 adapter = listAdapter
             }
@@ -79,16 +94,6 @@ class BannerInListViewFragment : androidx.fragment.app.Fragment(), HotmobAdListe
         }
     }
     private fun showingCallback() {
-        val adWebView: AdWebView? = listView?.findViewById(R.id.HTMLWebView)
-        adWebView?.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                if (event != null && event.action != MotionEvent.ACTION_UP) {
-                    listView?.requestDisallowInterceptTouchEvent(true)
-                } else {
-                    (v as AdWebView)?.isClicked = true
-                }
-                return false
-            }
-        })
+
     }
 }

@@ -29,17 +29,17 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashbroadBinding.inflate(inflater, container, false)
         floating?.hide()
 
-        if(floating == null) {
-            floating = HotmobFloating(requireContext(), (614).toFloat())
-            floating?.identifier = "Floating"
-            floating?.adCode = "hotmob_android_banner_standard"
-            val contentLayout = activity?.findViewById(R.id.content) as View
-            print("view.height : " + view?.height)
-            floating?.bindToView(binding.root as ViewGroup)
-        } else {
-            floating?.adCode = "hotmob_android_banner_standard"
-        }
-        floating?.loadAd()
+//        if(floating == null) {
+//            floating = HotmobFloating(requireContext())
+//            floating?.identifier = "Floating"
+//            floating?.adCode = "hotmob_android_banner_standard"
+//            val contentLayout = activity?.findViewById(R.id.content) as View
+//            print("view.height : " + view?.height)
+//            floating?.bindToView(binding.root as ViewGroup)
+//        } else {
+//            floating?.adCode = "hotmob_android_banner_standard"
+//        }
+//        floating?.loadAd()
         return binding.root
     }
 
