@@ -39,32 +39,18 @@ class BannerInListViewFragment : androidx.fragment.app.Fragment(), HotmobAdListe
                 ad1.identifier = "List Banner 1"
                 ad1.adCode = context.resources.getStringArray(R.array.banner_click_action_adcodes)[0]
                 ad1.focusableAd = true
+                ad1.disallowParentTouch = true
 
                 val ad2 = HotmobBanner(context)
                 ad2.identifier = "List Banner 2"
                 ad2.adCode = context.resources.getStringArray(R.array.banner_click_action_adcodes)[2]
-                ad2.focusableAd = false
+                ad2.focusableAd = true
+                ad2.disallowParentTouch = true
 
                 val ads = HashMap<Int, HotmobBanner>()
 
                 ads[5] = ad1
-                ad1.setOnTouchListener { v, event ->
-                    if (event != null && event.action != MotionEvent.ACTION_UP) {
-                        listView?.requestDisallowInterceptTouchEvent(true)
-                    } else {
-                        (v as HotmobBanner).onClick()
-                    }
-                    false
-                }
                 ads[15] = ad2
-                ad1.setOnTouchListener { v, event ->
-                    if (event != null && event.action != MotionEvent.ACTION_UP) {
-                        listView?.requestDisallowInterceptTouchEvent(true)
-                    } else {
-                        (v as HotmobBanner).performClick()
-                    }
-                    false
-                }
                 listAdapter = ListItemListViewAdapter(context, dummyItems, ads)
                 adapter = listAdapter
             }

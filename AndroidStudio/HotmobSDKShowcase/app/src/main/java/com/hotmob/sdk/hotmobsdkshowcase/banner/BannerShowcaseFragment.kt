@@ -92,32 +92,13 @@ class BannerShowcaseFragment : androidx.fragment.app.Fragment(), View.OnClickLis
             HotmobAdEvent.START_LOADING -> binding.bannerStatus.text = "Start Loading"
             HotmobAdEvent.LOADED -> binding.bannerStatus.text = "Loaded"
             HotmobAdEvent.NO_AD -> binding.bannerStatus.text = "No ad returned"
-            HotmobAdEvent.SHOW -> {
-                binding.bannerStatus.text = "Showing"
-//                val adWebView: AdWebView? = binding.banner?.findViewById(R.id.HTMLWebView)
-                binding.banner?.setOnTouchListener(object : View.OnTouchListener {
-                    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                        println(event)
-                        if (event != null && event.action != MotionEvent.ACTION_UP) {
-                            binding.root?.requestDisallowInterceptTouchEvent(true)
-                        } else {
-                            (v as HotmobBanner)?.onClick()
-                        }
-                        return false
-                    }
-                })
-
-            }
+            HotmobAdEvent.SHOW -> binding.bannerStatus.text = "Showing"
             HotmobAdEvent.HIDE -> binding.bannerStatus.text = "Hidden"
             HotmobAdEvent.RESIZE -> Toast.makeText(context, "Banner resized", Toast.LENGTH_SHORT).show()
             HotmobAdEvent.VIDEO_MUTE -> Toast.makeText(context, "Ad video mute", Toast.LENGTH_SHORT).show()
             HotmobAdEvent.VIDEO_UNMUTE -> Toast.makeText(context, "Ad video unmute", Toast.LENGTH_SHORT).show()
             else -> return
         }
-    }
-
-    private fun showingCallback() {
-
     }
 
     override fun onDeepLink(deepLink: String) {
