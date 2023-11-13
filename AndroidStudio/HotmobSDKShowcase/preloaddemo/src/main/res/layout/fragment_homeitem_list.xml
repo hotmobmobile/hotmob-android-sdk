@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <androidx.recyclerview.widget.RecyclerView
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/list"
         android:name="com.hotmob.sdk.sdkreloaddemokotlin.home.HomeFragment"
@@ -12,3 +15,14 @@
         app:layoutManager="LinearLayoutManager"
         tools:context=".home.HomeFragment"
         tools:listitem="@layout/fragment_homeitem"/>
+
+    <com.hotmob.sdk.ad.HotmobFloating
+        android:id="@+id/floatingBanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:identifier="Floating"
+        app:adcode="hotmob_android_expand" />
+
+</RelativeLayout>

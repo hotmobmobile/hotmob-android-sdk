@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeitemListBinding.inflate(inflater, container, false)
 
         // Set the adapter
-        with(binding.root) {
+        with(binding.list) {
             layoutManager = when {
                 columnCount <= 1 -> LinearLayoutManager(context)
                 else -> GridLayoutManager(context, columnCount)
