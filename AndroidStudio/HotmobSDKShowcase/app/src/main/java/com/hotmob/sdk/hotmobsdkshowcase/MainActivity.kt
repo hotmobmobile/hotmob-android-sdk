@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity(),
             R.id.nav_floating_showcase -> FloatingBannerShowcaseFragment()
             R.id.nav_floating_list -> FloatingListViewFragment()
             R.id.nav_data_collection -> DataCollectionFragment()
+            R.id.nav_vast_showcase -> VastShowcaseFragment()
             else -> BannerShowcaseFragment()
         }
 

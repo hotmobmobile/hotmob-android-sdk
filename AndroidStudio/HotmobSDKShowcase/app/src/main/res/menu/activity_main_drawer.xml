@@ -29,6 +29,15 @@
         </menu>
     </item>
 
+    <item android:title="VAST">
+        <menu>
+            <item
+                android:id="@+id/nav_vast_showcase"
+                android:icon="@android:drawable/ic_menu_gallery"
+                android:title="Showcase"/>
+        </menu>
+    </item>
+
     <item android:title="Interstitial">
         <menu>
             <item
