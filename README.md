@@ -11,6 +11,7 @@ The latest version of Hotmob Android SDK, includes a bunch of bug fixes, perform
 
 ### Integration
 * [Installation](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Installation-v6)
+* [Installation without google ads sdk](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Installation-v6-without-google)
 * [Basic Usage](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v6)
   - [Interstitial](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v6#interstitial)
   - [Banner](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v6#banner)
