@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnListFragmentInteraction
             .commit()
     }
 
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        val action: String? = intent?.action
-        val data: Uri? = intent?.data
+        val action: String? = intent.action
+        val data: Uri? = intent.data
         Log.d("MainActivity", "New intent action: $action, data: $data")
     }
 

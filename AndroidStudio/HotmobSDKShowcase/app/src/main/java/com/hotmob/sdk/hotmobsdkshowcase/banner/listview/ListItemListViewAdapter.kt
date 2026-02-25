@@ -26,7 +26,7 @@ class ListItemListViewAdapter (
         var view = convertView
         if (view == null || view.tag != viewType) {
             view = if (viewType == AD) {
-                LayoutInflater.from(context).inflate(R.layout.hotmob_ad_viewholder, parent, false)
+                LayoutInflater.from(context).inflate(com.hotmob.sdk.R.layout.hotmob_ad_viewholder, parent, false)
             } else {
                 LayoutInflater.from(context).inflate(R.layout.listitem_dummyitem, parent, false)
             }
