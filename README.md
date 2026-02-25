@@ -2,15 +2,17 @@
 Mobile Advertising with Hotmob, the first and largest mobile ad network in Hong Kong, where monetizes the mobile taffic of the top ranked publishers into revenue and meanwhile connects advertisers to target audience effectively.
 Visit http://www.hot-mob.com/ for more details.
 
-## SDK v6
+## SDK v6.0.3
 The latest version of Hotmob Android SDK, includes a bunch of bug fixes, performance improvements and error handling.
 
 ### Compatibility
 * Minimum Android SDK: API level 28
-* Fully Tested Android SDK: API level 33
+* Fully Tested Android SDK: API level 36
+* Java Version: 17
 
 ### Integration
-* [Installation](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Installation-v6)
+* [Installation](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Installation-v6.0.3)
+* [Migrate from v6 to v6.0.3](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Migrate-from-v6-to-v6.0.3)
 * [Installation without google ads sdk](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Installation-v6-without-google)
 * [Basic Usage](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v6)
   - [Interstitial](https://github.com/hotmobmobile/hotmob-android-sdk/wiki/Basic-Usage-v6#interstitial)
