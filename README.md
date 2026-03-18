@@ -8,6 +8,7 @@ The latest version of Hotmob Android SDK, includes a bunch of bug fixes, perform
 ### Compatibility
 * Minimum Android SDK: API level 28
 * Fully Tested Android SDK: API level 36
+* Kotlin Version: 2.1.0
 * Java Version: 17
 
 ### Integration
